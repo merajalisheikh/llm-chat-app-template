@@ -1,183 +1,419 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Nvm Dark</title>
-		<style>
-			:root {
-				--primary-color: #f6821f;
-				--primary-hover: #e67e22;
-				--light-bg: #f9fafb;
-				--border-color: #e5e7eb;
-				--text-color: #1f2937;
-				--text-light: #6b7280;
-				--user-msg-bg: #fff2e6;
-				--assistant-msg-bg: #f3f4f6;
-			}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080810" />
+  <title>Nvm Dark AI</title>
+  <style>
+    :root {
+      --bg: #080810;
+      --panel: #10101c;
+      --panel2: #151526;
+      --border: #28283d;
+      --text: #f4f2ff;
+      --muted: #9896b3;
+      --purple: #9b5cff;
+      --blue: #5478ff;
+    }
 
-			* {
-				box-sizing: border-box;
-				margin: 0;
-				padding: 0;
-			}
+    * { box-sizing: border-box; }
 
-			body {
-				font-family:
-					-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
-					Cantarell, sans-serif;
-				line-height: 1.6;
-				color: var(--text-color);
-				max-width: 800px;
-				margin: 0 auto;
-				padding: 1rem;
-			}
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(ellipse at 65% 0%, #28204a55, transparent 42%),
+        var(--bg);
+      color: var(--text);
+    }
 
-			header {
-				text-align: center;
-				margin-bottom: 2rem;
-				padding: 1rem 0;
-				border-bottom: 1px solid var(--border-color);
-			}
+    button, textarea { font: inherit; }
 
-			h1 {
-				font-size: 1.5rem;
-				color: var(--primary-color);
-			}
+    button { cursor: pointer; }
 
-			.chat-container {
-				display: flex;
-				flex-direction: column;
-				height: calc(100vh - 200px);
-				min-height: 400px;
-				border: 1px solid var(--border-color);
-				border-radius: 8px;
-				overflow: hidden;
-			}
+    .app {
+      display: flex;
+      min-height: 100vh;
+    }
 
-			.chat-messages {
-				flex: 1;
-				overflow-y: auto;
-				padding: 1rem;
-				background-color: var(--light-bg);
-			}
+    .sidebar {
+      width: 250px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 22px 14px;
+      background: #0b0b14;
+      border-right: 1px solid var(--border);
+    }
 
-			.message {
-				margin-bottom: 1rem;
-				padding: 0.75rem;
-				border-radius: 8px;
-				max-width: 80%;
-			}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 3px 9px 26px;
+    }
 
-			.message p {
-				white-space: pre-line;
-				margin: 0;
-				overflow-wrap: anywhere;
-			}
+    .logo {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      box-shadow: 0 0 26px #8056ff50;
+      font-size: 22px;
+      font-weight: 900;
+    }
 
-			.user-message {
-				background-color: var(--user-msg-bg);
-				align-self: flex-end;
-				margin-left: auto;
-			}
+    .brand-name { font-size: 18px; font-weight: 800; }
+    .brand-sub { color: var(--muted); font-size: 11px; }
 
-			.assistant-message {
-				background-color: var(--assistant-msg-bg);
-				align-self: flex-start;
-			}
+    .new-chat {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #7552c9;
+      border-radius: 12px;
+      background: linear-gradient(110deg, #7541c9, #394ec0);
+      color: white;
+      font-weight: 700;
+      text-align: left;
+      margin-bottom: 24px;
+    }
 
-			.message-input {
-				display: flex;
-				padding: 0.75rem;
-				border-top: 1px solid var(--border-color);
-				background-color: white;
-			}
+    .section-label {
+      padding: 0 10px;
+      margin-bottom: 9px;
+      color: #77758f;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+    }
 
-			#user-input {
-				flex: 1;
-				padding: 0.75rem;
-				border: 1px solid var(--border-color);
-				border-radius: 4px;
-				font-family: inherit;
-				resize: none;
-				min-height: 44px;
-			}
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 12px;
+      margin: 2px 0;
+      color: #c5c2dc;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      background: transparent;
+      text-align: left;
+      font-size: 13px;
+    }
 
-			#send-button {
-				margin-left: 0.5rem;
-				padding: 0 1rem;
-				background-color: var(--primary-color);
-				color: white;
-				border: none;
-				border-radius: 4px;
-				cursor: pointer;
-				transition: background-color 0.2s;
-			}
+    .nav-item:hover, .nav-item.active {
+      color: white;
+      background: #8b5cf619;
+      border-color: #8b5cf630;
+    }
 
-			#send-button:hover {
-				background-color: var(--primary-hover);
-			}
+    .nav-icon { width: 20px; text-align: center; font-size: 16px; }
 
-			#send-button:disabled {
-				background-color: var(--text-light);
-				cursor: not-allowed;
-			}
+    .sidebar-bottom {
+      margin-top: auto;
+      padding-top: 18px;
+    }
 
-			.typing-indicator {
-				display: none;
-				font-style: italic;
-				color: var(--text-light);
-				padding: 1rem;
-			}
+    .powered {
+      margin: 15px 8px 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.8;
+    }
 
-			.typing-indicator.visible {
-				display: block;
-			}
+    .powered strong { color: #c3a3ff; }
 
-			footer {
-				margin-top: 1rem;
-				text-align: center;
-				font-size: 0.85rem;
-				color: var(--text-light);
-			}
-		</style>
-	</head>
-	<body>
-		<header>
-			<h1>Cloudflare AI Chat</h1>
-			<p>Powered by Cloudflare Workers AI</p>
-		</header>
+    .main {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-		<div class="chat-container">
-			<div id="chat-messages" class="chat-messages">
-				<div class="message assistant-message">
-					<p>
-						Hello! I'm an LLM chat app powered by Cloudflare Workers AI. How can
-						I help you today?
-					</p>
-				</div>
-			</div>
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 18px 28px;
+      border-bottom: 1px solid #28283d99;
+      background: #0b0b14a8;
+    }
 
-			<div class="typing-indicator" id="typing-indicator">
-				AI is thinking...
-			</div>
+    .top-title { font-size: 14px; font-weight: 700; }
+    .status { color: #a7e6c2; font-size: 11px; }
+    .status::before { content: "●"; margin-right: 7px; color: #55e69b; }
 
-			<div class="message-input">
-				<textarea
-					id="user-input"
-					placeholder="Type your message here..."
-					rows="1"
-					autofocus
-				></textarea>
-				<button id="send-button">Send</button>
-			</div>
-		</div>
+    .chat-container {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      width: 100%;
+      max-width: 950px;
+      margin: 0 auto;
+      min-height: 0;
+      padding: 28px 26px 14px;
+    }
 
-		<footer>
-			<p>Cloudflare Workers AI Chat Template &copy; 2025</p>
-		</footer>
+    .welcome {
+      margin: 25px auto 22px;
+      text-align: center;
+    }
 
-		<!-- Chat app script -->
-		<script src="chat.js"></script>
-	</body>
+    .welcome-mark {
+      display: grid;
+      place-items: center;
+      width: 62px;
+      height: 62px;
+      margin: 0 auto 18px;
+      border: 1px solid #9b5cff66;
+      border-radius: 21px;
+      background: linear-gradient(135deg, #9b5cff24, #5478ff24);
+      box-shadow: 0 0 42px #8253ff22;
+      font-size: 29px;
+    }
+
+    .welcome h1 {
+      margin: 0 0 10px;
+      font-size: clamp(25px, 4vw, 38px);
+      letter-spacing: -1.2px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #c29bff, #7fa2ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .welcome p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .chat-messages {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-height: 180px;
+      overflow-y: auto;
+      padding: 16px 4px;
+      gap: 12px;
+    }
+
+    .message {
+      max-width: min(82%, 680px);
+      padding: 13px 16px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      line-height: 1.7;
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    .message p { margin: 0; white-space: pre-line; }
+    .assistant-message { align-self: flex-start; background: #141421; }
+    .user-message {
+      align-self: flex-end;
+      background: linear-gradient(135deg, #5732a1, #3445a1);
+      border-color: #8164e9;
+    }
+
+    .typing-indicator {
+      display: none;
+      color: #bca4ff;
+      padding: 8px 4px;
+      font-size: 12px;
+    }
+
+    .typing-indicator.visible { display: block; }
+
+    .message-input {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      padding: 10px;
+      border: 1px solid #37334f;
+      border-radius: 17px;
+      background: #12121f;
+      box-shadow: 0 0 32px #0003;
+    }
+
+    #user-input {
+      flex: 1;
+      width: 0;
+      min-height: 44px;
+      max-height: 180px;
+      padding: 12px 10px;
+      border: 0;
+      outline: none;
+      resize: none;
+      color: var(--text);
+      background: transparent;
+    }
+
+    #user-input::placeholder { color: #77758f; }
+
+    #send-button {
+      min-height: 44px;
+      padding: 0 19px;
+      border: 0;
+      border-radius: 12px;
+      color: white;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      box-shadow: 0 0 20px #8056ff25;
+    }
+
+    #send-button:disabled { opacity: .55; cursor: not-allowed; }
+
+    footer {
+      padding: 17px 10px 8px;
+      color: #77758f;
+      text-align: center;
+      font-size: 11px;
+    }
+
+    @media (max-width: 720px) {
+      .app { flex-direction: column; }
+      .sidebar {
+        width: 100%;
+        padding: 12px;
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .brand { padding: 2px 5px 12px; }
+      .logo { width: 36px; height: 36px; border-radius: 11px; }
+      .new-chat { margin-bottom: 10px; }
+      .section-label { margin-top: 7px; }
+      .sidebar nav {
+        display: flex;
+        gap: 5px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+      .nav-item {
+        flex: 0 0 auto;
+        padding: 9px;
+        font-size: 11px;
+      }
+      .nav-icon { width: auto; }
+      .sidebar-bottom { display: none; }
+      .topbar { padding: 13px 16px; }
+      .chat-container {
+        min-height: 65vh;
+        padding: 14px 12px 10px;
+      }
+      .welcome { margin: 25px auto 10px; }
+      .message { max-width: 92%; }
+      #send-button { padding: 0 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">N</div>
+        <div>
+          <div class="brand-name">Nvm Dark</div>
+          <div class="brand-sub">AI WORKSPACE</div>
+        </div>
+      </div>
+
+      <button class="new-chat" id="new-chat-button">＋ &nbsp; New Chat</button>
+
+      <div class="section-label">WORKSPACE</div>
+      <nav>
+        <button class="nav-item active" data-tool="history"><span class="nav-icon">◷</span> Chat History</button>
+        <button class="nav-item" data-tool="image"><span class="nav-icon">✧</span> Image Generation</button>
+        <button class="nav-item" data-tool="file"><span class="nav-icon">↥</span> File Upload</button>
+        <button class="nav-item" data-tool="voice"><span class="nav-icon">♫</span> Voice Chat</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="section-label">PREFERENCES</div>
+        <button class="nav-item" data-tool="settings"><span class="nav-icon">⚙</span> Settings</button>
+        <button class="nav-item" data-tool="help"><span class="nav-icon">?</span> Help & Support</button>
+        <p class="powered">Powered by <strong>i27dark</strong><br />Built for curious minds.</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <div class="top-title">Nvm Dark <span class="gradient-text">AI</span></div>
+        <div class="status">AI workspace</div>
+      </div>
+
+      <section class="chat-container">
+        <div class="welcome" id="welcome">
+          <div class="welcome-mark">✦</div>
+          <h1>Meet your <span class="gradient-text">AI companion.</span></h1>
+          <p>Ask anything. Explore ideas. Make something amazing.</p>
+        </div>
+
+        <div id="chat-messages" class="chat-messages">
+          <div class="message assistant-message">
+            <p>Hello! I'm Nvm Dark AI. How can I help you today?</p>
+          </div>
+        </div>
+
+        <div class="typing-indicator" id="typing-indicator">✦ Nvm Dark is thinking...</div>
+
+        <div class="message-input">
+          <textarea id="user-input" placeholder="Message Nvm Dark AI..." rows="1" autofocus></textarea>
+          <button id="send-button">Send ↗</button>
+        </div>
+
+        <footer>Nvm Dark AI © 2026 · Powered by i27dark</footer>
+      </section>
+    </main>
+  </div>
+
+  <script src="chat.js"></script>
+  <script>
+    const welcome = document.getElementById("welcome");
+    const messages = document.getElementById("chat-messages");
+
+    document.getElementById("new-chat-button").addEventListener("click", () => {
+      messages.innerHTML = "";
+      welcome.style.display = "block";
+      if (typeof chatHistory !== "undefined") {
+        chatHistory = [];
+      }
+    });
+
+    document.querySelectorAll("[data-tool]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const tool = button.dataset.tool;
+        if (tool === "history") {
+          alert("Chat History: saved conversation history will be added next.");
+        } else {
+          const names = {
+            image: "Image Generation",
+            file: "File Upload",
+            voice: "Voice Chat",
+            settings: "Settings",
+            help: "Help & Support"
+          };
+          alert(names[tool] + " will be enabled in a future update.");
+        }
+      });
+    });
+
+    document.getElementById("user-input").addEventListener("input", () => {
+      welcome.style.display = "none";
+    });
+
+    document.getElementById("new-chat-button").addEventListener("click", () => {
+      welcome.style.display = "block";
+    });
+  </script>
+</body>
 </html>
