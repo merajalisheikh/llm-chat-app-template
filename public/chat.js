@@ -215,7 +215,6 @@ async function sendMessage() {
 			chatHistory.push({ role: "assistant", content: responseText });
 			saveCurrentMessages();
 		}
-		}
 	} catch (error) {
 		console.error("Error:", error);
 		addMessageToChat(
