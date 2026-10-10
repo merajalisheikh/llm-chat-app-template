@@ -1,4 +1,4 @@
-/**
+hathchath/**
  * LLM Chat App Frontend
  *
  * Handles the chat UI interactions and communication with the backend API.
@@ -19,6 +19,41 @@ let chatHistory = [
 	},
 ];
 let isProcessing = false;
+const STORAGE_KEY = "nvm-dark-ai-chats-v1";
+
+let conversations = [];
+let currentConversationId = null;
+
+function saveConversations() {
+  try {
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify({
+        conversations,
+        currentConversationId
+      })
+    );
+  } catch (error) {
+    console.error("Could not save chat history:", error);
+  }
+}
+
+function loadConversations() {
+  try {
+    const saved = JSON.parse(
+      localStorage.getItem(STORAGE_KEY) || "{}"
+    );
+
+    conversations = Array.isArray(saved.conversations)
+      ? saved.conversations
+      : [];
+
+    currentConversationId = saved.currentConversationId || null;
+  } catch (error) {
+    conversations = [];
+    currentConversationId = null;
+  }
+}
 
 // Auto-resize textarea as user types
 userInput.addEventListener("input", function () {
@@ -63,6 +98,7 @@ async function sendMessage() {
 
 	// Add message to history
 	chatHistory.push({ role: "user", content: message });
+	saveCurrentMessages();
 
 	try {
 		// Create new assistant response element
@@ -174,8 +210,11 @@ async function sendMessage() {
 		}
 
 		// Add completed response to chat history
+		// Add completed response to chat history
 		if (responseText.length > 0) {
 			chatHistory.push({ role: "assistant", content: responseText });
+			saveCurrentMessages();
+		}
 		}
 	} catch (error) {
 		console.error("Error:", error);
@@ -228,3 +267,171 @@ function consumeSseEvents(buffer) {
 	}
 	return { events, buffer: normalized };
 }
+function getCurrentConversation() {
+  return conversations.find(
+    (conversation) => conversation.id === currentConversationId
+  );
+}
+
+function saveCurrentMessages() {
+  let conversation = getCurrentConversation();
+
+  if (!conversation) {
+    conversation = {
+      id: Date.now().toString(36) + Math.random().toString(36).slice(2),
+      title: "New Chat",
+      messages: [],
+      updatedAt: Date.now()
+    };
+
+    conversations.unshift(conversation);
+    currentConversationId = conversation.id;
+  }
+
+  conversation.messages = [...chatHistory];
+  conversation.updatedAt = Date.now();
+
+  const firstUserMessage = chatHistory.find(
+    (message) => message.role === "user"
+  );
+
+  if (firstUserMessage) {
+    conversation.title =
+      firstUserMessage.content.slice(0, 35) || "New Chat";
+  }
+
+  saveConversations();
+  renderChatHistory();
+}
+
+function renderChatHistory() {
+  const list = document.getElementById("chat-history-list");
+  if (!list) return;
+
+  list.innerHTML = "";
+
+  conversations.forEach((conversation) => {
+    const item = document.createElement("div");
+    item.style.cssText =
+      "display:flex;align-items:center;gap:6px;margin:4px 0;";
+
+    const openButton = document.createElement("button");
+    openButton.textContent = conversation.title || "New Chat";
+    openButton.style.cssText =
+      "flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;" +
+      "white-space:nowrap;text-align:left;padding:8px;border:0;" +
+      "border-radius:8px;background:transparent;color:inherit;cursor:pointer;";
+
+    openButton.onclick = () => {
+      currentConversationId = conversation.id;
+      chatHistory = [...conversation.messages];
+      saveConversations();
+      renderMessages();
+    };
+
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "×";
+    deleteButton.title = "Delete chat";
+    deleteButton.style.cssText =
+      "padding:6px 10px;border:0;border-radius:6px;" +
+      "background:transparent;color:inherit;cursor:pointer;";
+
+    deleteButton.onclick = () => {
+      conversations = conversations.filter(
+        (chat) => chat.id !== conversation.id
+      );
+
+      if (currentConversationId === conversation.id) {
+        currentConversationId = null;
+        createNewConversation();
+        return;
+      }
+
+      saveConversations();
+      renderChatHistory();
+    };
+
+    item.append(openButton, deleteButton);
+    list.appendChild(item);
+  });
+}
+
+function renderMessages() {
+  const messages = document.getElementById("chat-messages");
+  const welcome = document.getElementById("welcome");
+
+  if (!messages) return;
+
+  messages.innerHTML = "";
+
+  chatHistory.forEach((message) => {
+    addMessageToChat(message.role, message.content);
+  });
+
+  if (welcome) {
+    welcome.style.display = chatHistory.some(
+      (message) => message.role === "user"
+    ) ? "none" : "block";
+  }
+
+  renderChatHistory();
+}
+
+function createNewConversation() {
+  const conversation = {
+    id: Date.now().toString(36) + Math.random().toString(36).slice(2),
+    title: "New Chat",
+    messages: [
+      {
+        role: "assistant",
+        content: "Hi! I'm Nvm Dark AI. How can I help you today?"
+      }
+    ],
+    updatedAt: Date.now()
+  };
+
+  conversations.unshift(conversation);
+  currentConversationId = conversation.id;
+  chatHistory = [...conversation.messages];
+
+  saveConversations();
+  renderMessages();
+}
+
+function initializeChatHistory() {
+  loadConversations();
+
+  const current = getCurrentConversation();
+
+  if (current) {
+    chatHistory = [...current.messages];
+  } else if (conversations.length > 0) {
+    currentConversationId = conversations[0].id;
+    chatHistory = [...conversations[0].messages];
+  } else {
+    createNewConversation();
+    return;
+  }
+
+  renderMessages();
+
+  const newChatButton = document.getElementById("new-chat-button");
+
+  if (newChatButton) {
+    newChatButton.addEventListener("click", () => {
+      if (!isProcessing) createNewConversation();
+    });
+  }
+
+  const historyToggle = document.getElementById("history-toggle");
+  const historyList = document.getElementById("chat-history-list");
+
+  if (historyToggle && historyList) {
+    historyToggle.addEventListener("click", () => {
+      historyList.style.display =
+        historyList.style.display === "none" ? "block" : "none";
+    });
+  }
+}
+
+initializeChatHistory();
