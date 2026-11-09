@@ -70,7 +70,7 @@ userInput.addEventListener("keydown", function (e) {
 });
 
 // Send button click handler
-sendButton.addEventListener("click", sendMessage);
+sendButton.onclick = sendMessage;
 
 /**
  * Sends a message to the chat API and processes the response
