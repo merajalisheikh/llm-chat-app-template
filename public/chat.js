@@ -1,4 +1,6 @@
-hathchath/**
+/**
+ *LLM Chat App Frontend
+ */
  * LLM Chat App Frontend
  *
  * Handles the chat UI interactions and communication with the backend API.
