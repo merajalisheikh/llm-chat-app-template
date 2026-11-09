@@ -239,9 +239,6 @@ async function sendMessage() {
  * Helper function to add message to chat
  */
 function addMessageToChat(role, content) {
-	const messageEl = document.createElement("div");
-	messageEl.className = `message ${role}-message`;
-	function addMessageToChat(role, content) {
     const messageEl = document.createElement("div");
     messageEl.className = `message ${role}-message`;
 
