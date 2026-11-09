@@ -1,5 +1,5 @@
 /**
- *LLM Chat App Frontend
+ * LLM Chat App Frontend
  */
  * LLM Chat App Frontend
  *
