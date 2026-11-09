@@ -211,8 +211,7 @@ async function sendMessage() {
 			}
 		}
 
-		// Add completed response to chat history
-		
+		// Add completed response to chat history		
 		if (responseText.length > 0) {
 			chatHistory.push({ role: "assistant", content: responseText });
 			saveCurrentMessages();
