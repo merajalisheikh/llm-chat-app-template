@@ -250,11 +250,6 @@ function addMessageToChat(role, content) {
 
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
-	chatMessages.appendChild(messageEl);
-
-	// Scroll to bottom
-	chatMessages.scrollTop = chatMessages.scrollHeight;
-}
 
 function consumeSseEvents(buffer) {
 	let normalized = buffer.replace(/\r/g, "");
