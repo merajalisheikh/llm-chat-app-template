@@ -348,11 +348,27 @@
   }
 }
 
+#sidebar-overlay {
+  display: none;
+}
 
+@media (max-width: 720px) {
+  #sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+  }
+
+  #sidebar-overlay.active {
+    display: block;
+  }
+}
   </style>
 </head>
 <body>
   <div class="app">
+    <div id="sidebar-overlay"></div>
     <aside class="sidebar">
       <div class="brand">
         <div class="logo">N</div>
@@ -470,5 +486,27 @@
       welcome.style.display = "block";
     });
   </script>
+  <script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const sidebar = document.querySelector(".sidebar");
+  const overlay = document.getElementById("sidebar-overlay");
+
+  menuToggle.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+    overlay.classList.toggle("active");
+  });
+
+  overlay.addEventListener("click", () => {
+    sidebar.classList.remove("open");
+    overlay.classList.remove("active");
+  });
+
+  sidebar.addEventListener("click", (event) => {
+    if (event.target.closest("button")) {
+      sidebar.classList.remove("open");
+      overlay.classList.remove("active");
+    }
+  }, true);
+</script>
 </body>
 </html>
