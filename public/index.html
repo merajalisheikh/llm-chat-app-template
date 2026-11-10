@@ -425,8 +425,13 @@
   menuToggle.addEventListener("click", () => {
     sidebar.classList.toggle("open");
   });
+  sidebar.querySelectorAll("button").forEach((button) => {
+  button.addEventListener("click", () => {
+    sidebar.classList.remove("open");
+  });
+});
   </script>
-  
+
   <script>
     const welcome = document.getElementById("welcome");
     const messages = document.getElementById("chat-messages");
