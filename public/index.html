@@ -425,11 +425,11 @@
   menuToggle.addEventListener("click", () => {
     sidebar.classList.toggle("open");
   });
-  sidebar.querySelectorAll("button").forEach((button) => {
-  button.addEventListener("click", () => {
+  sidebar.addEventListener("click", (event) => {
+  if (event.target.closest("button")) {
     sidebar.classList.remove("open");
-  });
-});
+  }
+}, true);
   </script>
 
   <script>
