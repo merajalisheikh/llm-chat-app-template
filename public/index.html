@@ -347,39 +347,8 @@
     width: 100%;
   }
 }
-      .app { flex-direction: column; }
-      .sidebar {
-        width: 100%;
-        padding: 12px;
-        border-right: 0;
-        border-bottom: 1px solid var(--border);
-      }
-      .brand { padding: 2px 5px 12px; }
-      .logo { width: 36px; height: 36px; border-radius: 11px; }
-      .new-chat { margin-bottom: 10px; }
-      .section-label { margin-top: 7px; }
-      .sidebar nav {
-        display: flex;
-        gap: 5px;
-        overflow-x: auto;
-        padding-bottom: 4px;
-      }
-      .nav-item {
-        flex: 0 0 auto;
-        padding: 9px;
-        font-size: 11px;
-      }
-      .nav-icon { width: auto; }
-      .sidebar-bottom { display: none; }
-      .topbar { padding: 13px 16px; }
-      .chat-container {
-        min-height: 65vh;
-        padding: 14px 12px 10px;
-      }
-      .welcome { margin: 25px auto 10px; }
-      .message { max-width: 92%; }
-      #send-button { padding: 0 14px; }
-    }
+
+
   </style>
 </head>
 <body>
@@ -448,6 +417,16 @@
   </div>
 
   <script src="chat.js"></script>
+
+  <script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const sidebar = document.querySelector(".sidebar");
+
+  menuToggle.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+  });
+  </script>
+  
   <script>
     const welcome = document.getElementById("welcome");
     const messages = document.getElementById("chat-messages");
