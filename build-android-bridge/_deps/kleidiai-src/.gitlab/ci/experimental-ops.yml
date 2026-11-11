@@ -1,0 +1,352 @@
+# SPDX-FileCopyrightText: Copyright 2026 Arm Limited and/or its affiliates <open-source-office@arm.com>
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+# Summary:
+#   Build and test experimental/ops across different targets.
+# Purpose and scope:
+#   - Validate experimental/ops native benchmark builds with Clang and GCC.
+#   - Run GEMM, convolution and depthwise soak test plans against native builds.
+#   - Cover ASan variants with reduced test limits for diagnostic coverage.
+#   - Run experimental/ops checks for relevant merge requests, the default
+#     branch, protected release tags, or explicitly enabled manual pipelines.
+# Main jobs (high-level):
+#   - build-experimental-ops-* : compile experimental/ops benchmark binaries.
+#   - test-experimental-ops-*  : execute experimental/ops soak test plans.
+# Usage notes:
+#   - Set KLEIDIAI_RUN_EXPERIMENTAL_OPS_CI=true when creating a pipeline to
+#     include these jobs.
+#   - Relevant merge requests, the default branch and protected release tags
+#     include these jobs automatically.
+#   - Changes to shared root CI config are listed because shared defaults, runner
+#     settings and variables can affect experimental/ops jobs.
+#
+
+# Base template: .experimental-ops-rules
+# Purpose: Run experimental/ops checks for relevant merge requests, the default
+#          branch, protected release tags or pipelines explicitly created with
+#          KLEIDIAI_RUN_EXPERIMENTAL_OPS_CI=true.
+.experimental-ops-rules:
+  timeout: 1h
+  rules:
+    - if: $CI_COMMIT_TAG && $CI_COMMIT_REF_PROTECTED == "true"
+      exists:
+        - experimental/ops/CMakeLists.txt
+    - if: $KLEIDIAI_RUN_EXPERIMENTAL_OPS_CI == "true"
+      exists:
+        - experimental/ops/CMakeLists.txt
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+      changes:
+        - .gitlab-ci.yml
+        - .gitlab/ci/experimental-ops.yml
+        - experimental/ops/**/*
+      exists:
+        - experimental/ops/CMakeLists.txt
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      exists:
+        - experimental/ops/CMakeLists.txt
+      variables:
+        CACHE_POLICY: pull-push
+    - if: $CI_COMMIT_TAG && $CI_COMMIT_REF_PROTECTED == "true"
+      exists:
+        - experimental/ops/CMakeLists.txt
+
+.macos-android-ndk-setup:
+  script:
+    - &macos_android_ndk_setup |
+      MACOS_ANDROID_SDK="${ANDROID_HOME:-${HOME}/Library/Android/sdk}"
+      MACOS_ANDROID_NDK="${ANDROID_NDK_HOME:-${MACOS_ANDROID_SDK}/ndk/${MACOS_ANDROID_NDK_VERSION}}"
+      test -f "${MACOS_ANDROID_NDK}/build/cmake/android.toolchain.cmake" || { echo "Android NDK toolchain file not found under ${MACOS_ANDROID_NDK}"; exit 1; }
+
+# Base template: .build-experimental-ops-native
+# Purpose: Build the experimental/ops benchmark executable for native test jobs.
+.build-experimental-ops-native:
+  extends:
+    - .experimental-ops-rules
+  stage: build
+  script:
+    - cmake -G Ninja
+      --toolchain ${CI_PROJECT_DIR}/${EXPERIMENTAL_OPS_TOOLCHAIN_FILE}
+      -DCMAKE_C_COMPILER=${EXPERIMENTAL_OPS_C_COMPILER}
+      -DCMAKE_CXX_COMPILER=${EXPERIMENTAL_OPS_CXX_COMPILER}
+      -DKLEIDIAI_OPS_ENABLE_BUILD_BENCHMARK=ON
+      ${EXPERIMENTAL_OPS_CMAKE_EXTRA:-}
+      -S experimental/ops
+      -B ${CI_JOB_NAME_SLUG}
+    - cmake --build ${CI_JOB_NAME_SLUG} -j${PARALLEL_JOBS} --verbose
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - ${CI_JOB_NAME_SLUG}/benchmark/gemm
+
+# Base template: .generate-test-dumps-experimental-ops-native
+# Purpose: Generate reference kernel dumps for the GEMM, convolution, and depthwise test plans.
+.generate-test-dumps-experimental-ops-native:
+  extends:
+    - .experimental-ops-rules
+  stage: test
+  timeout: 30m
+  variables:
+    RUNNER_SCRIPT_TIMEOUT: 30m
+  script:
+    - |
+      if [ -n "${EXPERIMENTAL_OPS_ASAN_OPTIONS:-}" ]; then
+        export ASAN_OPTIONS="${EXPERIMENTAL_OPS_ASAN_OPTIONS}"
+      fi
+    - |
+      # SOAK_TEST_THREADS controls concurrent dump-generation cases, not GEMM
+      # threads. Keep the replay concurrency budget here: its divisor represents
+      # an estimated average cost of roughly 3.5 inner threads, rounded to four.
+      # Dump creation itself strips each plan entry's -t option before invoking
+      # GEMM.
+      SOAK_TEST_THREADS=$(( PARALLEL_JOBS / 4 ))
+      if [ "${SOAK_TEST_THREADS}" -lt 1 ]; then
+        SOAK_TEST_THREADS=1
+      fi
+      export SOAK_TEST_THREADS
+    - echo "Generating conv soak test reference data!"
+    - |
+      set -o pipefail
+      python3 experimental/ops/scripts/soak-full.py \
+        --create_dumpdir tests/dumps/conv_reduced_tests \
+        --conv \
+        --test_plan_file experimental/ops/tests/configs/conv_tests_new_reduced.cfg \
+        --threads "${SOAK_TEST_THREADS}" \
+        ${EXPERIMENTAL_OPS_SOAK_EXTRA_ARGS:-} \
+        --binary ${EXPERIMENTAL_OPS_BUILD_DIR}/benchmark/gemm
+    - echo "Generating depthwise soak test reference data!"
+    - |
+      python3 experimental/ops/scripts/soak-full.py \
+        --create_dumpdir tests/dumps/depthwise_reduced_tests \
+        --conv \
+        --kernel_filter depthwise \
+        --test_plan_file experimental/ops/tests/configs/depthwise_tests_new_reduced.cfg \
+        --threads "${SOAK_TEST_THREADS}" \
+        ${EXPERIMENTAL_OPS_SOAK_EXTRA_ARGS:-} \
+        --binary ${EXPERIMENTAL_OPS_BUILD_DIR}/benchmark/gemm
+    - echo "Generating gemm soak test reference data!"
+    - |
+      python3 experimental/ops/scripts/soak-full.py \
+        --create_dumpdir tests/dumps/gemm_reduced_tests \
+        --test_plan_file experimental/ops/tests/configs/gemm_tests_new_reduced.cfg \
+        --threads "${SOAK_TEST_THREADS}" \
+        ${EXPERIMENTAL_OPS_SOAK_EXTRA_ARGS:-} \
+        --binary ${EXPERIMENTAL_OPS_BUILD_DIR}/benchmark/gemm
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - tests/dumps/
+
+# Base template: .test-experimental-ops-native
+# Purpose: Run the native GEMM, convolution, and depthwise test plans.
+.test-experimental-ops-native:
+  extends:
+    - .experimental-ops-rules
+  stage: test
+  timeout: 2h
+  variables:
+    RUNNER_SCRIPT_TIMEOUT: 2h
+  script:
+    - |
+      if [ -n "${EXPERIMENTAL_OPS_ASAN_OPTIONS:-}" ]; then
+        export ASAN_OPTIONS="${EXPERIMENTAL_OPS_ASAN_OPTIONS}"
+      fi
+    - |
+      # SOAK_TEST_THREADS controls concurrent soak cases; each plan entry's
+      # -t option controls inner GEMM threads. The divisor represents an estimated
+      # average cost of roughly 3.5 inner threads per case, rounded to four.
+      # This intentionally targets average utilization rather than a hard cap, so a
+      # -t 7 case can temporarily exceed PARALLEL_JOBS, particularly on shared macOS
+      # shell runners.
+      SOAK_TEST_THREADS=$(( PARALLEL_JOBS / 4 ))
+      if [ "${SOAK_TEST_THREADS}" -lt 1 ]; then
+        SOAK_TEST_THREADS=1
+      fi
+      export SOAK_TEST_THREADS
+    - echo "Running soak tests with ${SOAK_TEST_THREADS} concurrent soak cases"
+    - echo "Running conv soak tests!"
+    - |
+      set -o pipefail
+      python3 experimental/ops/scripts/soak-full.py \
+        --dumpdir tests/dumps/conv_reduced_tests \
+        --conv \
+        --threads ${SOAK_TEST_THREADS} \
+        ${EXPERIMENTAL_OPS_SOAK_EXTRA_ARGS:-} \
+        --binary ${EXPERIMENTAL_OPS_BUILD_DIR}/benchmark/gemm 2>&1 \
+        | tee conv_tests.log
+    - echo "Running depthwise soak tests!"
+    - |
+      python3 experimental/ops/scripts/soak-full.py \
+        --dumpdir tests/dumps/depthwise_reduced_tests \
+        --conv \
+        --kernel_filter depthwise \
+        --threads ${SOAK_TEST_THREADS} \
+        ${EXPERIMENTAL_OPS_SOAK_EXTRA_ARGS:-} \
+        --binary ${EXPERIMENTAL_OPS_BUILD_DIR}/benchmark/gemm 2>&1 \
+        | tee depthwise_tests.log
+    - echo "Running gemm soak tests!"
+    - |
+      python3 experimental/ops/scripts/soak-full.py \
+        --dumpdir tests/dumps/gemm_reduced_tests \
+        --threads ${SOAK_TEST_THREADS} \
+        ${EXPERIMENTAL_OPS_SOAK_EXTRA_ARGS:-} \
+        --binary ${EXPERIMENTAL_OPS_BUILD_DIR}/benchmark/gemm 2>&1 \
+        | tee gemm_tests.log
+  artifacts:
+    when: always
+    expire_in: 7 days
+    paths:
+      - conv_tests.log
+      - depthwise_tests.log
+      - gemm_tests.log
+      - soak-*/
+
+build-experimental-ops-clang-linux-aarch64:
+  extends:
+    - .build-experimental-ops-native
+  variables:
+    EXPERIMENTAL_OPS_C_COMPILER: clang
+    EXPERIMENTAL_OPS_CXX_COMPILER: clang++
+    EXPERIMENTAL_OPS_TOOLCHAIN_FILE: experimental/ops/toolchains/native/native-linux-aarch64-gnu.cmake
+
+build-experimental-ops-clang-asan-linux-aarch64:
+  extends:
+    - .build-experimental-ops-native
+  variables:
+    EXPERIMENTAL_OPS_C_COMPILER: clang
+    EXPERIMENTAL_OPS_CXX_COMPILER: clang++
+    EXPERIMENTAL_OPS_TOOLCHAIN_FILE: experimental/ops/toolchains/native/native-linux-aarch64-gnu.cmake
+    EXPERIMENTAL_OPS_CMAKE_EXTRA: >-
+      -DCMAKE_BUILD_TYPE=Debug
+      -DKLEIDIAI_OPS_CCXX_FLAGS_INIT:STRING=-g;-fsanitize=address;-fno-omit-frame-pointer;-fno-common
+      -DKLEIDIAI_OPS_LINKER_FLAGS_INIT:STRING=-fsanitize=address
+
+build-experimental-ops-gcc-linux-aarch64:
+  extends:
+    - .build-experimental-ops-native
+  variables:
+    EXPERIMENTAL_OPS_C_COMPILER: gcc
+    EXPERIMENTAL_OPS_CXX_COMPILER: g++
+    EXPERIMENTAL_OPS_TOOLCHAIN_FILE: experimental/ops/toolchains/native/native-linux-aarch64-gnu.cmake
+
+build-experimental-ops-clang-macos:
+  extends:
+    - .build-experimental-ops-native
+  tags:
+    - apple_silicon
+  variables:
+    EXPERIMENTAL_OPS_C_COMPILER: clang
+    EXPERIMENTAL_OPS_CXX_COMPILER: clang++
+    EXPERIMENTAL_OPS_TOOLCHAIN_FILE: experimental/ops/toolchains/native/native-macos-aarch64-clang.cmake
+
+build-experimental-ops-clang-asan-macos:
+  extends:
+    - .build-experimental-ops-native
+  tags:
+    - apple_silicon
+  variables:
+    EXPERIMENTAL_OPS_C_COMPILER: clang
+    EXPERIMENTAL_OPS_CXX_COMPILER: clang++
+    EXPERIMENTAL_OPS_TOOLCHAIN_FILE: experimental/ops/toolchains/native/native-macos-aarch64-clang.cmake
+    EXPERIMENTAL_OPS_CMAKE_EXTRA: >-
+      -DCMAKE_BUILD_TYPE=Debug
+      -DKLEIDIAI_OPS_CCXX_FLAGS_INIT:STRING=-g;-fsanitize=address;-fno-omit-frame-pointer;-fno-common
+      -DKLEIDIAI_OPS_LINKER_FLAGS_INIT:STRING=-fsanitize=address
+
+build-experimental-ops-android-arm64-v8a:
+  extends:
+    - .experimental-ops-rules
+  stage: build
+  needs: []
+  tags:
+    - apple_silicon
+  script:
+    - *macos_android_ndk_setup
+    - export ANDROID_NDK_HOME="${MACOS_ANDROID_NDK}"
+    - cmake -G Ninja
+      --toolchain ${CI_PROJECT_DIR}/experimental/ops/toolchains/cross/cross-android-arm64-v8a.cmake
+      -DCMAKE_ANDROID_NDK=${MACOS_ANDROID_NDK}
+      -DKLEIDIAI_OPS_ENABLE_BUILD_BENCHMARK=ON
+      -S experimental/ops
+      -B ${CI_JOB_NAME_SLUG}
+    - cmake --build ${CI_JOB_NAME_SLUG} -j${PARALLEL_JOBS} --verbose
+
+generate-test-dumps-experimental-ops-linux:
+  extends:
+    - .generate-test-dumps-experimental-ops-native
+  needs:
+    - build-experimental-ops-clang-linux-aarch64
+  variables:
+    EXPERIMENTAL_OPS_BUILD_DIR: build-experimental-ops-clang-linux-aarch64
+    PARALLEL_JOBS: 1
+
+generate-test-dumps-experimental-ops-macos:
+  extends:
+    - .generate-test-dumps-experimental-ops-native
+  needs:
+    - build-experimental-ops-clang-macos
+  tags:
+    - apple_silicon
+  variables:
+    EXPERIMENTAL_OPS_BUILD_DIR: build-experimental-ops-clang-macos
+    PARALLEL_JOBS: 1
+
+test-experimental-ops-clang-linux-aarch64:
+  extends:
+    - .test-experimental-ops-native
+  needs:
+    - build-experimental-ops-clang-linux-aarch64
+    - generate-test-dumps-experimental-ops-linux
+  variables:
+    EXPERIMENTAL_OPS_BUILD_DIR: build-experimental-ops-clang-linux-aarch64
+    PARALLEL_JOBS: 1
+
+test-experimental-ops-clang-asan-linux-aarch64:
+  extends:
+    - .test-experimental-ops-native
+  needs:
+    - build-experimental-ops-clang-asan-linux-aarch64
+    - generate-test-dumps-experimental-ops-linux
+  variables:
+    EXPERIMENTAL_OPS_BUILD_DIR: build-experimental-ops-clang-asan-linux-aarch64
+    EXPERIMENTAL_OPS_ASAN_OPTIONS: halt_on_error=1:print_stacktrace=1
+    KUBERNETES_CPU_REQUEST: 8
+    KUBERNETES_CPU_LIMIT: 12
+    PARALLEL_JOBS: 2
+
+test-experimental-ops-gcc-linux-aarch64:
+  extends:
+    - .test-experimental-ops-native
+  needs:
+    - build-experimental-ops-gcc-linux-aarch64
+    - generate-test-dumps-experimental-ops-linux
+  variables:
+    EXPERIMENTAL_OPS_BUILD_DIR: build-experimental-ops-gcc-linux-aarch64
+    KUBERNETES_CPU_REQUEST: 32
+    KUBERNETES_CPU_LIMIT: 48
+    PARALLEL_JOBS: 8
+
+test-experimental-ops-clang-macos:
+  extends:
+    - .test-experimental-ops-native
+  needs:
+    - build-experimental-ops-clang-macos
+    - generate-test-dumps-experimental-ops-macos
+  tags:
+    - apple_silicon
+  variables:
+    EXPERIMENTAL_OPS_BUILD_DIR: build-experimental-ops-clang-macos
+    PARALLEL_JOBS: 1
+
+test-experimental-ops-clang-asan-macos:
+  extends:
+    - .test-experimental-ops-native
+  needs:
+    - build-experimental-ops-clang-asan-macos
+    - generate-test-dumps-experimental-ops-macos
+  tags:
+    - apple_silicon
+  variables:
+    EXPERIMENTAL_OPS_BUILD_DIR: build-experimental-ops-clang-asan-macos
+    EXPERIMENTAL_OPS_ASAN_OPTIONS: halt_on_error=1:print_stacktrace=1
+    PARALLEL_JOBS: 1

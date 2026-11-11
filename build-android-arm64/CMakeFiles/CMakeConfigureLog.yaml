@@ -1,0 +1,985 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:200 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The target system is: Android - 1 - aarch64
+      The host system is: Linux - 6.8.0-1070-azure - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang 
+      Build flags: -g;-DANDROID;-fdata-sections;-ffunction-sections;-funwind-tables;-fstack-protector-strong;-no-canonical-prefixes;-D_FORTIFY_SOURCE=2;-Wformat;-Werror=format-security
+      Id flags: -c;--target=aarch64-none-linux-android31 
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
+      
+      The C compiler identification is Clang, found in:
+        /workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/3.31.6/CompilerIdC/CMakeCCompilerId.o
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ 
+      Build flags: -g;-DANDROID;-fdata-sections;-ffunction-sections;-funwind-tables;-fstack-protector-strong;-no-canonical-prefixes;-D_FORTIFY_SOURCE=2;-Wformat;-Werror=format-security
+      Id flags: -c;--target=aarch64-none-linux-android31 
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
+      
+      The CXX compiler identification is Clang, found in:
+        /workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/3.31.6/CompilerIdCXX/CMakeCXXCompilerId.o
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-7Prr53"
+      binary: "/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-7Prr53"
+    cmakeVariables:
+      ANDROID_ABI: "arm64-v8a"
+      ANDROID_ARM_MODE: "thumb"
+      ANDROID_PIE: "TRUE"
+      ANDROID_PLATFORM: "android-31"
+      ANDROID_STL: "c++_static"
+      ANDROID_TOOLCHAIN: "clang"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang-scan-deps"
+      CMAKE_CXX_COMPILER_TARGET: "aarch64-none-linux-android31"
+      CMAKE_C_COMPILER_TARGET: "aarch64-none-linux-android31"
+      CMAKE_C_FLAGS: "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat "
+      CMAKE_C_FLAGS_DEBUG: "-fno-limit-debug-info "
+      CMAKE_EXE_LINKER_FLAGS: "-static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments  "
+      CMAKE_POSITION_INDEPENDENT_CODE: "TRUE"
+      CMAKE_SYSROOT: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-7Prr53'
+        
+        Run Build Command(s): /home/codespace/Android/Sdk/cmake/3.31.6/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_75279/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_75279.dir/build.make CMakeFiles/cmTC_75279.dir/build
+        gmake[1]: Entering directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-7Prr53'
+        Building C object CMakeFiles/cmTC_75279.dir/CMakeCCompilerABI.c.o
+        /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android31 --sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat   -fPIE   -v -MD -MT CMakeFiles/cmTC_75279.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_75279.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_75279.dir/CMakeCCompilerABI.c.o -c /home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeCCompilerABI.c
+        Android (12470979, +pgo, +bolt, +lto, +mlgo, based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)
+        Target: aarch64-none-linux-android31
+        Thread model: posix
+        InstalledDir: /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin
+         (in-process)
+         "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang" -cc1 -triple aarch64-none-linux-android31 -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu generic -target-feature +neon -target-feature +v8a -target-feature +fix-cortex-a53-835769 -target-abi aapcs -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -fdebug-compilation-dir=/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-7Prr53 -v -ffunction-sections -fdata-sections -fcoverage-compilation-dir=/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-7Prr53 -resource-dir /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18 -dependency-file CMakeFiles/cmTC_75279.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_75279.dir/CMakeCCompilerABI.c.o -sys-header-deps -D ANDROID -D _FORTIFY_SOURCE=2 -isysroot /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot -internal-isystem /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include -internal-isystem /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/local/include -internal-externc-isystem /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android -internal-externc-isystem /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/include -internal-externc-isystem /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include -Wformat -ferror-limit 19 -stack-protector 2 -fno-signed-char -fgnuc-version=4.2.1 -target-feature +outline-atomics -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_75279.dir/CMakeCCompilerABI.c.o -x c /home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeCCompilerABI.c
+        clang -cc1 version 18.0.3 based upon LLVM 18.0.3 default target x86_64-unknown-linux-gnu
+        ignoring nonexistent directory "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/local/include"
+        ignoring nonexistent directory "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include
+         /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android
+         /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include
+        End of search list.
+        Linking C executable cmTC_75279
+        /home/codespace/Android/Sdk/cmake/3.31.6/bin/cmake -E cmake_link_script CMakeFiles/cmTC_75279.dir/link.txt --verbose=1
+        Android (12470979, +pgo, +bolt, +lto, +mlgo, based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)
+        Target: aarch64-none-linux-android31
+        Thread model: posix
+        InstalledDir: /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin
+         "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/ld.lld" --sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot -EL --fix-cortex-a53-843419 -z now -z relro -z max-page-size=4096 --hash-style=gnu --eh-frame-hdr -m aarch64linux -pie -dynamic-linker /system/bin/linker64 -o cmTC_75279 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtbegin_dynamic.o -L/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/aarch64 -L/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31 -L/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android -L/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib --build-id=sha1 --no-undefined-version --fatal-warnings --no-undefined CMakeFiles/cmTC_75279.dir/CMakeCCompilerABI.c.o /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl -lc /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtend_android.o
+        /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android31 --sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat   -static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments   -v CMakeFiles/cmTC_75279.dir/CMakeCCompilerABI.c.o -o cmTC_75279
+        gmake[1]: Leaving directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-7Prr53'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include]
+          add: [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android]
+          add: [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include]
+        end of search list found
+        collapse include dir [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include] ==> [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include]
+        collapse include dir [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android] ==> [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android]
+        collapse include dir [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include] ==> [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include]
+        implicit include dirs: [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include;/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android;/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-7Prr53']
+        ignore line: []
+        ignore line: [Run Build Command(s): /home/codespace/Android/Sdk/cmake/3.31.6/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_75279/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_75279.dir/build.make CMakeFiles/cmTC_75279.dir/build]
+        ignore line: [gmake[1]: Entering directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-7Prr53']
+        ignore line: [Building C object CMakeFiles/cmTC_75279.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android31 --sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat   -fPIE   -v -MD -MT CMakeFiles/cmTC_75279.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_75279.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_75279.dir/CMakeCCompilerABI.c.o -c /home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeCCompilerABI.c]
+        ignore line: [Android (12470979  +pgo  +bolt  +lto  +mlgo  based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)]
+        ignore line: [Target: aarch64-none-linux-android31]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin]
+        ignore line: [ (in-process)]
+        ignore line: [ "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang" -cc1 -triple aarch64-none-linux-android31 -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu generic -target-feature +neon -target-feature +v8a -target-feature +fix-cortex-a53-835769 -target-abi aapcs -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -fdebug-compilation-dir=/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-7Prr53 -v -ffunction-sections -fdata-sections -fcoverage-compilation-dir=/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-7Prr53 -resource-dir /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18 -dependency-file CMakeFiles/cmTC_75279.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_75279.dir/CMakeCCompilerABI.c.o -sys-header-deps -D ANDROID -D _FORTIFY_SOURCE=2 -isysroot /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot -internal-isystem /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include -internal-isystem /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/local/include -internal-externc-isystem /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android -internal-externc-isystem /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/include -internal-externc-isystem /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include -Wformat -ferror-limit 19 -stack-protector 2 -fno-signed-char -fgnuc-version=4.2.1 -target-feature +outline-atomics -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_75279.dir/CMakeCCompilerABI.c.o -x c /home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang -cc1 version 18.0.3 based upon LLVM 18.0.3 default target x86_64-unknown-linux-gnu]
+        ignore line: [ignoring nonexistent directory "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/local/include"]
+        ignore line: [ignoring nonexistent directory "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include]
+        ignore line: [ /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android]
+        ignore line: [ /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Linking C executable cmTC_75279]
+        ignore line: [/home/codespace/Android/Sdk/cmake/3.31.6/bin/cmake -E cmake_link_script CMakeFiles/cmTC_75279.dir/link.txt --verbose=1]
+        ignore line: [Android (12470979  +pgo  +bolt  +lto  +mlgo  based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)]
+        ignore line: [Target: aarch64-none-linux-android31]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin]
+        link line: [ "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/ld.lld" --sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot -EL --fix-cortex-a53-843419 -z now -z relro -z max-page-size=4096 --hash-style=gnu --eh-frame-hdr -m aarch64linux -pie -dynamic-linker /system/bin/linker64 -o cmTC_75279 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtbegin_dynamic.o -L/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/aarch64 -L/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31 -L/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android -L/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib --build-id=sha1 --no-undefined-version --fatal-warnings --no-undefined CMakeFiles/cmTC_75279.dir/CMakeCCompilerABI.c.o /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl -lc /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtend_android.o]
+          arg [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/ld.lld] ==> ignore
+          arg [--sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot] ==> ignore
+          arg [-EL] ==> ignore
+          arg [--fix-cortex-a53-843419] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-zmax-page-size=4096] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [aarch64linux] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/system/bin/linker64] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_75279] ==> ignore
+          arg [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtbegin_dynamic.o] ==> obj [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtbegin_dynamic.o]
+          arg [-L/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/aarch64] ==> dir [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/aarch64]
+          arg [-L/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31] ==> dir [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31]
+          arg [-L/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android] ==> dir [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android]
+          arg [-L/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib] ==> dir [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib]
+          arg [--build-id=sha1] ==> ignore
+          arg [--no-undefined-version] ==> ignore
+          arg [--fatal-warnings] ==> ignore
+          arg [--no-undefined] ==> ignore
+          arg [CMakeFiles/cmTC_75279.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-aarch64-android.a] ==> lib [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-aarch64-android.a]
+          arg [-l:libunwind.a] ==> lib [-l:libunwind.a]
+          arg [-ldl] ==> lib [dl]
+          arg [-lc] ==> lib [c]
+          arg [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-aarch64-android.a] ==> lib [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-aarch64-android.a]
+          arg [-l:libunwind.a] ==> lib [-l:libunwind.a]
+          arg [-ldl] ==> lib [dl]
+          arg [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtend_android.o] ==> obj [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtend_android.o]
+        linker tool for 'C': /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/ld.lld
+        remove lib [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-aarch64-android.a]
+        remove lib [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-aarch64-android.a]
+        collapse library dir [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/aarch64] ==> [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/aarch64]
+        collapse library dir [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31] ==> [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31]
+        collapse library dir [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android] ==> [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android]
+        collapse library dir [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib] ==> [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib]
+        implicit libs: [-l:libunwind.a;dl;c;-l:libunwind.a;dl]
+        implicit objs: [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtbegin_dynamic.o;/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtend_android.o]
+        implicit dirs: [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/aarch64;/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31;/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android;/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the C compiler's linker: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/ld.lld" "-v"
+      LLD 18.0.3 (compatible with GNU linkers)
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-wYqGNi"
+      binary: "/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-wYqGNi"
+    cmakeVariables:
+      ANDROID_ABI: "arm64-v8a"
+      ANDROID_ARM_MODE: "thumb"
+      ANDROID_PIE: "TRUE"
+      ANDROID_PLATFORM: "android-31"
+      ANDROID_STL: "c++_static"
+      ANDROID_TOOLCHAIN: "clang"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang-scan-deps"
+      CMAKE_CXX_COMPILER_TARGET: "aarch64-none-linux-android31"
+      CMAKE_CXX_FLAGS: "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat  "
+      CMAKE_CXX_FLAGS_DEBUG: "-fno-limit-debug-info "
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_COMPILER_TARGET: "aarch64-none-linux-android31"
+      CMAKE_EXE_LINKER_FLAGS: "-static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments  "
+      CMAKE_POSITION_INDEPENDENT_CODE: "TRUE"
+      CMAKE_SYSROOT: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-wYqGNi'
+        
+        Run Build Command(s): /home/codespace/Android/Sdk/cmake/3.31.6/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e06d7/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_e06d7.dir/build.make CMakeFiles/cmTC_e06d7.dir/build
+        gmake[1]: Entering directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-wYqGNi'
+        Building CXX object CMakeFiles/cmTC_e06d7.dir/CMakeCXXCompilerABI.cpp.o
+        /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android31 --sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat    -fPIE   -v -MD -MT CMakeFiles/cmTC_e06d7.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_e06d7.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_e06d7.dir/CMakeCXXCompilerABI.cpp.o -c /home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp
+        Android (12470979, +pgo, +bolt, +lto, +mlgo, based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)
+        Target: aarch64-none-linux-android31
+        Thread model: posix
+        InstalledDir: /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin
+         (in-process)
+         "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++" -cc1 -triple aarch64-none-linux-android31 -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu generic -target-feature +neon -target-feature +v8a -target-feature +fix-cortex-a53-835769 -target-abi aapcs -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -fdebug-compilation-dir=/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-wYqGNi -v -ffunction-sections -fdata-sections -fcoverage-compilation-dir=/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-wYqGNi -resource-dir /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18 -dependency-file CMakeFiles/cmTC_e06d7.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_e06d7.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -D ANDROID -D _FORTIFY_SOURCE=2 -isysroot /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot -internal-isystem /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1 -internal-isystem /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include -internal-isystem /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/local/include -internal-externc-isystem /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android -internal-externc-isystem /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/include -internal-externc-isystem /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include -Wformat -fdeprecated-macro -ferror-limit 19 -stack-protector 2 -fno-signed-char -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -target-feature +outline-atomics -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_e06d7.dir/CMakeCXXCompilerABI.cpp.o -x c++ /home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp
+        clang -cc1 version 18.0.3 based upon LLVM 18.0.3 default target x86_64-unknown-linux-gnu
+        ignoring nonexistent directory "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/local/include"
+        ignoring nonexistent directory "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1
+         /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include
+         /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android
+         /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include
+        End of search list.
+        Linking CXX executable cmTC_e06d7
+        /home/codespace/Android/Sdk/cmake/3.31.6/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e06d7.dir/link.txt --verbose=1
+        Android (12470979, +pgo, +bolt, +lto, +mlgo, based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)
+        Target: aarch64-none-linux-android31
+        Thread model: posix
+        InstalledDir: /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin
+         "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/ld.lld" --sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot -EL --fix-cortex-a53-843419 -z now -z relro -z max-page-size=4096 --hash-style=gnu --eh-frame-hdr -m aarch64linux -pie -dynamic-linker /system/bin/linker64 -o cmTC_e06d7 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtbegin_dynamic.o -L/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/aarch64 -L/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31 -L/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android -L/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib --build-id=sha1 --no-undefined-version --fatal-warnings --no-undefined CMakeFiles/cmTC_e06d7.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl -lc /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtend_android.o
+        /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android31 --sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat    -static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments   -v CMakeFiles/cmTC_e06d7.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_e06d7
+        gmake[1]: Leaving directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-wYqGNi'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1]
+          add: [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include]
+          add: [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android]
+          add: [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include]
+        end of search list found
+        collapse include dir [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1] ==> [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1]
+        collapse include dir [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include] ==> [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include]
+        collapse include dir [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android] ==> [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android]
+        collapse include dir [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include] ==> [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include]
+        implicit include dirs: [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1;/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include;/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android;/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-wYqGNi']
+        ignore line: []
+        ignore line: [Run Build Command(s): /home/codespace/Android/Sdk/cmake/3.31.6/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e06d7/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_e06d7.dir/build.make CMakeFiles/cmTC_e06d7.dir/build]
+        ignore line: [gmake[1]: Entering directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-wYqGNi']
+        ignore line: [Building CXX object CMakeFiles/cmTC_e06d7.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android31 --sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat    -fPIE   -v -MD -MT CMakeFiles/cmTC_e06d7.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_e06d7.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_e06d7.dir/CMakeCXXCompilerABI.cpp.o -c /home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Android (12470979  +pgo  +bolt  +lto  +mlgo  based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)]
+        ignore line: [Target: aarch64-none-linux-android31]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin]
+        ignore line: [ (in-process)]
+        ignore line: [ "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++" -cc1 -triple aarch64-none-linux-android31 -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu generic -target-feature +neon -target-feature +v8a -target-feature +fix-cortex-a53-835769 -target-abi aapcs -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -fdebug-compilation-dir=/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-wYqGNi -v -ffunction-sections -fdata-sections -fcoverage-compilation-dir=/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-wYqGNi -resource-dir /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18 -dependency-file CMakeFiles/cmTC_e06d7.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_e06d7.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -D ANDROID -D _FORTIFY_SOURCE=2 -isysroot /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot -internal-isystem /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1 -internal-isystem /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include -internal-isystem /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/local/include -internal-externc-isystem /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android -internal-externc-isystem /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/include -internal-externc-isystem /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include -Wformat -fdeprecated-macro -ferror-limit 19 -stack-protector 2 -fno-signed-char -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -target-feature +outline-atomics -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_e06d7.dir/CMakeCXXCompilerABI.cpp.o -x c++ /home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [clang -cc1 version 18.0.3 based upon LLVM 18.0.3 default target x86_64-unknown-linux-gnu]
+        ignore line: [ignoring nonexistent directory "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/local/include"]
+        ignore line: [ignoring nonexistent directory "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1]
+        ignore line: [ /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include]
+        ignore line: [ /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android]
+        ignore line: [ /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Linking CXX executable cmTC_e06d7]
+        ignore line: [/home/codespace/Android/Sdk/cmake/3.31.6/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e06d7.dir/link.txt --verbose=1]
+        ignore line: [Android (12470979  +pgo  +bolt  +lto  +mlgo  based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)]
+        ignore line: [Target: aarch64-none-linux-android31]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin]
+        link line: [ "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/ld.lld" --sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot -EL --fix-cortex-a53-843419 -z now -z relro -z max-page-size=4096 --hash-style=gnu --eh-frame-hdr -m aarch64linux -pie -dynamic-linker /system/bin/linker64 -o cmTC_e06d7 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtbegin_dynamic.o -L/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/aarch64 -L/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31 -L/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android -L/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib --build-id=sha1 --no-undefined-version --fatal-warnings --no-undefined CMakeFiles/cmTC_e06d7.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl -lc /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtend_android.o]
+          arg [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/ld.lld] ==> ignore
+          arg [--sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot] ==> ignore
+          arg [-EL] ==> ignore
+          arg [--fix-cortex-a53-843419] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-zmax-page-size=4096] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [aarch64linux] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/system/bin/linker64] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_e06d7] ==> ignore
+          arg [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtbegin_dynamic.o] ==> obj [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtbegin_dynamic.o]
+          arg [-L/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/aarch64] ==> dir [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/aarch64]
+          arg [-L/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31] ==> dir [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31]
+          arg [-L/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android] ==> dir [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android]
+          arg [-L/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib] ==> dir [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib]
+          arg [--build-id=sha1] ==> ignore
+          arg [--no-undefined-version] ==> ignore
+          arg [--fatal-warnings] ==> ignore
+          arg [--no-undefined] ==> ignore
+          arg [CMakeFiles/cmTC_e06d7.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-Bstatic] ==> search static
+          arg [-lc++] ==> lib [c++]
+          arg [-Bdynamic] ==> search dynamic
+          arg [-lm] ==> lib [m]
+          arg [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-aarch64-android.a] ==> lib [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-aarch64-android.a]
+          arg [-l:libunwind.a] ==> lib [-l:libunwind.a]
+          arg [-ldl] ==> lib [dl]
+          arg [-lc] ==> lib [c]
+          arg [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-aarch64-android.a] ==> lib [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-aarch64-android.a]
+          arg [-l:libunwind.a] ==> lib [-l:libunwind.a]
+          arg [-ldl] ==> lib [dl]
+          arg [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtend_android.o] ==> obj [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtend_android.o]
+        linker tool for 'CXX': /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/ld.lld
+        remove lib [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-aarch64-android.a]
+        remove lib [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-aarch64-android.a]
+        collapse library dir [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/aarch64] ==> [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/aarch64]
+        collapse library dir [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31] ==> [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31]
+        collapse library dir [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android] ==> [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android]
+        collapse library dir [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib] ==> [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib]
+        implicit libs: [c++;m;-l:libunwind.a;dl;c;-l:libunwind.a;dl]
+        implicit objs: [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtbegin_dynamic.o;/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtend_android.o]
+        implicit dirs: [/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/aarch64;/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31;/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android;/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the CXX compiler's linker: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/ld.lld" "-v"
+      LLD 18.0.3 (compatible with GNU linkers)
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "ggml/CMakeLists.txt:3 (project)"
+    message: |
+      Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+      Android (12470979, +pgo, +bolt, +lto, +mlgo, based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)
+      Target: x86_64-unknown-linux-gnu
+      Thread model: posix
+      InstalledDir: /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "ggml/CMakeLists.txt:3 (project)"
+    message: |
+      Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple (clang|LLVM) version)":
+      Android (12470979, +pgo, +bolt, +lto, +mlgo, based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)
+      Target: x86_64-unknown-linux-gnu
+      Thread model: posix
+      InstalledDir: /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1237 (message)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "ggml/CMakeLists.txt:3 (project)"
+    message: |
+      Checking whether the ASM compiler is Clang using "--version" matched "(clang version)":
+      Android (12470979, +pgo, +bolt, +lto, +mlgo, based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)
+      Target: x86_64-unknown-linux-gnu
+      Thread model: posix
+      InstalledDir: /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "ggml/CMakeLists.txt:298 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-fiJCK5"
+      binary: "/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-fiJCK5"
+    cmakeVariables:
+      ANDROID_ABI: "arm64-v8a"
+      ANDROID_ARM_MODE: "thumb"
+      ANDROID_PIE: "TRUE"
+      ANDROID_PLATFORM: "android-31"
+      ANDROID_STL: "c++_static"
+      ANDROID_TOOLCHAIN: "clang"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang-scan-deps"
+      CMAKE_CXX_COMPILER_TARGET: "aarch64-none-linux-android31"
+      CMAKE_C_COMPILER_TARGET: "aarch64-none-linux-android31"
+      CMAKE_C_FLAGS: "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security "
+      CMAKE_C_FLAGS_DEBUG: "-fno-limit-debug-info "
+      CMAKE_EXE_LINKER_FLAGS: "-static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments  "
+      CMAKE_MODULE_PATH: "/workspaces/llm-chat-app-template/llama.cpp/cmake/;/workspaces/llm-chat-app-template/llama.cpp/ggml/cmake/"
+      CMAKE_POSITION_INDEPENDENT_CODE: "TRUE"
+      CMAKE_SYSROOT: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-fiJCK5'
+        
+        Run Build Command(s): /home/codespace/Android/Sdk/cmake/3.31.6/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_03649/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_03649.dir/build.make CMakeFiles/cmTC_03649.dir/build
+        gmake[1]: Entering directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-fiJCK5'
+        Building C object CMakeFiles/cmTC_03649.dir/src.c.o
+        /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android31 --sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DCMAKE_HAVE_LIBC_PTHREAD  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -std=gnu11 -fPIE -MD -MT CMakeFiles/cmTC_03649.dir/src.c.o -MF CMakeFiles/cmTC_03649.dir/src.c.o.d -o CMakeFiles/cmTC_03649.dir/src.c.o -c /workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-fiJCK5/src.c
+        /workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-fiJCK5/src.c:13:3: error: call to undeclared function 'pthread_cancel'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+           13 |   pthread_cancel(thread);
+              |   ^
+        /workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-fiJCK5/src.c:13:3: note: did you mean 'pthread_once'?
+        /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/pthread.h:264:5: note: 'pthread_once' declared here
+          264 | int pthread_once(pthread_once_t* _Nonnull __once, void (* _Nonnull __init_routine)(void));
+              |     ^
+        1 error generated.
+        gmake[1]: *** [CMakeFiles/cmTC_03649.dir/build.make:82: CMakeFiles/cmTC_03649.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-fiJCK5'
+        gmake: *** [Makefile:134: cmTC_03649/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/FindThreads.cmake:136 (try_compile)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/FindThreads.cmake:169 (_threads_check_flag_pthread)"
+      - "ggml/CMakeLists.txt:298 (find_package)"
+    checks:
+      - "Check if compiler accepts -pthread"
+    directories:
+      source: "/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-5cVXrm"
+      binary: "/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-5cVXrm"
+    cmakeVariables:
+      ANDROID_ABI: "arm64-v8a"
+      ANDROID_ARM_MODE: "thumb"
+      ANDROID_PIE: "TRUE"
+      ANDROID_PLATFORM: "android-31"
+      ANDROID_STL: "c++_static"
+      ANDROID_TOOLCHAIN: "clang"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang-scan-deps"
+      CMAKE_CXX_COMPILER_TARGET: "aarch64-none-linux-android31"
+      CMAKE_C_COMPILER_TARGET: "aarch64-none-linux-android31"
+      CMAKE_C_FLAGS: "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security "
+      CMAKE_C_FLAGS_DEBUG: "-fno-limit-debug-info "
+      CMAKE_EXE_LINKER_FLAGS: "-static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments  "
+      CMAKE_MODULE_PATH: "/workspaces/llm-chat-app-template/llama.cpp/cmake/;/workspaces/llm-chat-app-template/llama.cpp/ggml/cmake/"
+      CMAKE_POSITION_INDEPENDENT_CODE: "TRUE"
+      CMAKE_SYSROOT: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot"
+    buildResult:
+      variable: "THREADS_HAVE_PTHREAD_ARG"
+      cached: true
+      stdout: |
+        Change Dir: '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-5cVXrm'
+        
+        Run Build Command(s): /home/codespace/Android/Sdk/cmake/3.31.6/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_741c6/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_741c6.dir/build.make CMakeFiles/cmTC_741c6.dir/build
+        gmake[1]: Entering directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-5cVXrm'
+        Building C object CMakeFiles/cmTC_741c6.dir/CheckForPthreads.c.o
+        /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android31 --sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -std=gnu11 -fPIE -MD -MT CMakeFiles/cmTC_741c6.dir/CheckForPthreads.c.o -MF CMakeFiles/cmTC_741c6.dir/CheckForPthreads.c.o.d -o CMakeFiles/cmTC_741c6.dir/CheckForPthreads.c.o -c /workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-5cVXrm/CheckForPthreads.c
+        Linking C executable cmTC_741c6
+        /home/codespace/Android/Sdk/cmake/3.31.6/bin/cmake -E cmake_link_script CMakeFiles/cmTC_741c6.dir/link.txt --verbose=1
+        /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android31 --sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments    CMakeFiles/cmTC_741c6.dir/CheckForPthreads.c.o -o cmTC_741c6  -pthread -latomic -lm
+        gmake[1]: Leaving directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-5cVXrm'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "ggml/src/ggml-cpu/CMakeLists.txt:121 (check_cxx_compiler_flag)"
+      - "ggml/src/CMakeLists.txt:596 (ggml_add_cpu_backend_variant_impl)"
+    checks:
+      - "Performing Test GGML_COMPILER_SUPPORTS_FP16_FORMAT_I3E"
+    directories:
+      source: "/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-j2Z19k"
+      binary: "/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-j2Z19k"
+    cmakeVariables:
+      ANDROID_ABI: "arm64-v8a"
+      ANDROID_ARM_MODE: "thumb"
+      ANDROID_PIE: "TRUE"
+      ANDROID_PLATFORM: "android-31"
+      ANDROID_STL: "c++_static"
+      ANDROID_TOOLCHAIN: "clang"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang-scan-deps"
+      CMAKE_CXX_COMPILER_TARGET: "aarch64-none-linux-android31"
+      CMAKE_CXX_FLAGS: "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  "
+      CMAKE_CXX_FLAGS_DEBUG: "-fno-limit-debug-info "
+      CMAKE_C_COMPILER_TARGET: "aarch64-none-linux-android31"
+      CMAKE_EXE_LINKER_FLAGS: "-static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments  "
+      CMAKE_MODULE_PATH: "/workspaces/llm-chat-app-template/llama.cpp/cmake/;/workspaces/llm-chat-app-template/llama.cpp/ggml/cmake/"
+      CMAKE_POSITION_INDEPENDENT_CODE: "TRUE"
+      CMAKE_SYSROOT: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot"
+    buildResult:
+      variable: "GGML_COMPILER_SUPPORTS_FP16_FORMAT_I3E"
+      cached: true
+      stdout: |
+        Change Dir: '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-j2Z19k'
+        
+        Run Build Command(s): /home/codespace/Android/Sdk/cmake/3.31.6/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_61196/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_61196.dir/build.make CMakeFiles/cmTC_61196.dir/build
+        gmake[1]: Entering directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-j2Z19k'
+        Building CXX object CMakeFiles/cmTC_61196.dir/src.cxx.o
+        /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android31 --sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DGGML_COMPILER_SUPPORTS_FP16_FORMAT_I3E  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security    -std=gnu++17 -fPIE   -mfp16-format=ieee -MD -MT CMakeFiles/cmTC_61196.dir/src.cxx.o -MF CMakeFiles/cmTC_61196.dir/src.cxx.o.d -o CMakeFiles/cmTC_61196.dir/src.cxx.o -c /workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-j2Z19k/src.cxx
+        clang++: error: unknown argument: '-mfp16-format=ieee'
+        gmake[1]: *** [CMakeFiles/cmTC_61196.dir/build.make:82: CMakeFiles/cmTC_61196.dir/src.cxx.o] Error 1
+        gmake[1]: Leaving directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-j2Z19k'
+        gmake: *** [Makefile:134: cmTC_61196/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CheckCXXSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "ggml/src/ggml-cpu/CMakeLists.txt:269 (check_cxx_source_compiles)"
+      - "ggml/src/CMakeLists.txt:596 (ggml_add_cpu_backend_variant_impl)"
+    checks:
+      - "Performing Test HAVE_DOTPROD"
+    directories:
+      source: "/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-koEu4p"
+      binary: "/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-koEu4p"
+    cmakeVariables:
+      ANDROID_ABI: "arm64-v8a"
+      ANDROID_ARM_MODE: "thumb"
+      ANDROID_PIE: "TRUE"
+      ANDROID_PLATFORM: "android-31"
+      ANDROID_STL: "c++_static"
+      ANDROID_TOOLCHAIN: "clang"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang-scan-deps"
+      CMAKE_CXX_COMPILER_TARGET: "aarch64-none-linux-android31"
+      CMAKE_CXX_FLAGS: "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  "
+      CMAKE_CXX_FLAGS_DEBUG: "-fno-limit-debug-info "
+      CMAKE_C_COMPILER_TARGET: "aarch64-none-linux-android31"
+      CMAKE_EXE_LINKER_FLAGS: "-static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments  "
+      CMAKE_MODULE_PATH: "/workspaces/llm-chat-app-template/llama.cpp/cmake/;/workspaces/llm-chat-app-template/llama.cpp/ggml/cmake/"
+      CMAKE_POSITION_INDEPENDENT_CODE: "TRUE"
+      CMAKE_SYSROOT: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot"
+    buildResult:
+      variable: "HAVE_DOTPROD"
+      cached: true
+      stdout: |
+        Change Dir: '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-koEu4p'
+        
+        Run Build Command(s): /home/codespace/Android/Sdk/cmake/3.31.6/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b94cd/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_b94cd.dir/build.make CMakeFiles/cmTC_b94cd.dir/build
+        gmake[1]: Entering directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-koEu4p'
+        Building CXX object CMakeFiles/cmTC_b94cd.dir/src.cxx.o
+        /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android31 --sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_DOTPROD  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security    -std=gnu++17 -fPIE -MD -MT CMakeFiles/cmTC_b94cd.dir/src.cxx.o -MF CMakeFiles/cmTC_b94cd.dir/src.cxx.o.d -o CMakeFiles/cmTC_b94cd.dir/src.cxx.o -c /workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-koEu4p/src.cxx
+        /workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-koEu4p/src.cxx:3:24: error: "Feature DOTPROD is not defined"
+            3 |                     #  error "Feature DOTPROD is not defined"
+              |                        ^
+        1 error generated.
+        gmake[1]: *** [CMakeFiles/cmTC_b94cd.dir/build.make:82: CMakeFiles/cmTC_b94cd.dir/src.cxx.o] Error 1
+        gmake[1]: Leaving directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-koEu4p'
+        gmake: *** [Makefile:134: cmTC_b94cd/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CheckCXXSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "ggml/src/ggml-cpu/CMakeLists.txt:269 (check_cxx_source_compiles)"
+      - "ggml/src/CMakeLists.txt:596 (ggml_add_cpu_backend_variant_impl)"
+    checks:
+      - "Performing Test HAVE_SVE"
+    directories:
+      source: "/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-2uYCmf"
+      binary: "/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-2uYCmf"
+    cmakeVariables:
+      ANDROID_ABI: "arm64-v8a"
+      ANDROID_ARM_MODE: "thumb"
+      ANDROID_PIE: "TRUE"
+      ANDROID_PLATFORM: "android-31"
+      ANDROID_STL: "c++_static"
+      ANDROID_TOOLCHAIN: "clang"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang-scan-deps"
+      CMAKE_CXX_COMPILER_TARGET: "aarch64-none-linux-android31"
+      CMAKE_CXX_FLAGS: "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  "
+      CMAKE_CXX_FLAGS_DEBUG: "-fno-limit-debug-info "
+      CMAKE_C_COMPILER_TARGET: "aarch64-none-linux-android31"
+      CMAKE_EXE_LINKER_FLAGS: "-static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments  "
+      CMAKE_MODULE_PATH: "/workspaces/llm-chat-app-template/llama.cpp/cmake/;/workspaces/llm-chat-app-template/llama.cpp/ggml/cmake/"
+      CMAKE_POSITION_INDEPENDENT_CODE: "TRUE"
+      CMAKE_SYSROOT: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot"
+    buildResult:
+      variable: "HAVE_SVE"
+      cached: true
+      stdout: |
+        Change Dir: '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-2uYCmf'
+        
+        Run Build Command(s): /home/codespace/Android/Sdk/cmake/3.31.6/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8e259/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_8e259.dir/build.make CMakeFiles/cmTC_8e259.dir/build
+        gmake[1]: Entering directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-2uYCmf'
+        Building CXX object CMakeFiles/cmTC_8e259.dir/src.cxx.o
+        /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android31 --sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_SVE  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security    -std=gnu++17 -fPIE -MD -MT CMakeFiles/cmTC_8e259.dir/src.cxx.o -MF CMakeFiles/cmTC_8e259.dir/src.cxx.o.d -o CMakeFiles/cmTC_8e259.dir/src.cxx.o -c /workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-2uYCmf/src.cxx
+        /workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-2uYCmf/src.cxx:3:24: error: "Feature SVE is not defined"
+            3 |                     #  error "Feature SVE is not defined"
+              |                        ^
+        1 error generated.
+        gmake[1]: *** [CMakeFiles/cmTC_8e259.dir/build.make:82: CMakeFiles/cmTC_8e259.dir/src.cxx.o] Error 1
+        gmake[1]: Leaving directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-2uYCmf'
+        gmake: *** [Makefile:134: cmTC_8e259/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CheckCXXSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "ggml/src/ggml-cpu/CMakeLists.txt:269 (check_cxx_source_compiles)"
+      - "ggml/src/CMakeLists.txt:596 (ggml_add_cpu_backend_variant_impl)"
+    checks:
+      - "Performing Test HAVE_MATMUL_INT8"
+    directories:
+      source: "/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-HKI4vd"
+      binary: "/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-HKI4vd"
+    cmakeVariables:
+      ANDROID_ABI: "arm64-v8a"
+      ANDROID_ARM_MODE: "thumb"
+      ANDROID_PIE: "TRUE"
+      ANDROID_PLATFORM: "android-31"
+      ANDROID_STL: "c++_static"
+      ANDROID_TOOLCHAIN: "clang"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang-scan-deps"
+      CMAKE_CXX_COMPILER_TARGET: "aarch64-none-linux-android31"
+      CMAKE_CXX_FLAGS: "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  "
+      CMAKE_CXX_FLAGS_DEBUG: "-fno-limit-debug-info "
+      CMAKE_C_COMPILER_TARGET: "aarch64-none-linux-android31"
+      CMAKE_EXE_LINKER_FLAGS: "-static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments  "
+      CMAKE_MODULE_PATH: "/workspaces/llm-chat-app-template/llama.cpp/cmake/;/workspaces/llm-chat-app-template/llama.cpp/ggml/cmake/"
+      CMAKE_POSITION_INDEPENDENT_CODE: "TRUE"
+      CMAKE_SYSROOT: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot"
+    buildResult:
+      variable: "HAVE_MATMUL_INT8"
+      cached: true
+      stdout: |
+        Change Dir: '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-HKI4vd'
+        
+        Run Build Command(s): /home/codespace/Android/Sdk/cmake/3.31.6/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_6acd6/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_6acd6.dir/build.make CMakeFiles/cmTC_6acd6.dir/build
+        gmake[1]: Entering directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-HKI4vd'
+        Building CXX object CMakeFiles/cmTC_6acd6.dir/src.cxx.o
+        /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android31 --sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_MATMUL_INT8  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security    -std=gnu++17 -fPIE -MD -MT CMakeFiles/cmTC_6acd6.dir/src.cxx.o -MF CMakeFiles/cmTC_6acd6.dir/src.cxx.o.d -o CMakeFiles/cmTC_6acd6.dir/src.cxx.o -c /workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-HKI4vd/src.cxx
+        /workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-HKI4vd/src.cxx:3:24: error: "Feature MATMUL_INT8 is not defined"
+            3 |                     #  error "Feature MATMUL_INT8 is not defined"
+              |                        ^
+        1 error generated.
+        gmake[1]: *** [CMakeFiles/cmTC_6acd6.dir/build.make:82: CMakeFiles/cmTC_6acd6.dir/src.cxx.o] Error 1
+        gmake[1]: Leaving directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-HKI4vd'
+        gmake: *** [Makefile:134: cmTC_6acd6/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CheckCXXSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "ggml/src/ggml-cpu/CMakeLists.txt:269 (check_cxx_source_compiles)"
+      - "ggml/src/CMakeLists.txt:596 (ggml_add_cpu_backend_variant_impl)"
+    checks:
+      - "Performing Test HAVE_FMA"
+    directories:
+      source: "/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-V3l6z6"
+      binary: "/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-V3l6z6"
+    cmakeVariables:
+      ANDROID_ABI: "arm64-v8a"
+      ANDROID_ARM_MODE: "thumb"
+      ANDROID_PIE: "TRUE"
+      ANDROID_PLATFORM: "android-31"
+      ANDROID_STL: "c++_static"
+      ANDROID_TOOLCHAIN: "clang"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang-scan-deps"
+      CMAKE_CXX_COMPILER_TARGET: "aarch64-none-linux-android31"
+      CMAKE_CXX_FLAGS: "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  "
+      CMAKE_CXX_FLAGS_DEBUG: "-fno-limit-debug-info "
+      CMAKE_C_COMPILER_TARGET: "aarch64-none-linux-android31"
+      CMAKE_EXE_LINKER_FLAGS: "-static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments  "
+      CMAKE_MODULE_PATH: "/workspaces/llm-chat-app-template/llama.cpp/cmake/;/workspaces/llm-chat-app-template/llama.cpp/ggml/cmake/"
+      CMAKE_POSITION_INDEPENDENT_CODE: "TRUE"
+      CMAKE_SYSROOT: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot"
+    buildResult:
+      variable: "HAVE_FMA"
+      cached: true
+      stdout: |
+        Change Dir: '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-V3l6z6'
+        
+        Run Build Command(s): /home/codespace/Android/Sdk/cmake/3.31.6/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_5a090/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_5a090.dir/build.make CMakeFiles/cmTC_5a090.dir/build
+        gmake[1]: Entering directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-V3l6z6'
+        Building CXX object CMakeFiles/cmTC_5a090.dir/src.cxx.o
+        /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android31 --sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_FMA  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security    -std=gnu++17 -fPIE -MD -MT CMakeFiles/cmTC_5a090.dir/src.cxx.o -MF CMakeFiles/cmTC_5a090.dir/src.cxx.o.d -o CMakeFiles/cmTC_5a090.dir/src.cxx.o -c /workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-V3l6z6/src.cxx
+        Linking CXX executable cmTC_5a090
+        /home/codespace/Android/Sdk/cmake/3.31.6/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5a090.dir/link.txt --verbose=1
+        /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android31 --sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security    -static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments    CMakeFiles/cmTC_5a090.dir/src.cxx.o -o cmTC_5a090  -latomic -lm
+        gmake[1]: Leaving directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-V3l6z6'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CheckCXXSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "ggml/src/ggml-cpu/CMakeLists.txt:269 (check_cxx_source_compiles)"
+      - "ggml/src/CMakeLists.txt:596 (ggml_add_cpu_backend_variant_impl)"
+    checks:
+      - "Performing Test HAVE_FP16_VECTOR_ARITHMETIC"
+    directories:
+      source: "/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-WJFWor"
+      binary: "/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-WJFWor"
+    cmakeVariables:
+      ANDROID_ABI: "arm64-v8a"
+      ANDROID_ARM_MODE: "thumb"
+      ANDROID_PIE: "TRUE"
+      ANDROID_PLATFORM: "android-31"
+      ANDROID_STL: "c++_static"
+      ANDROID_TOOLCHAIN: "clang"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang-scan-deps"
+      CMAKE_CXX_COMPILER_TARGET: "aarch64-none-linux-android31"
+      CMAKE_CXX_FLAGS: "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  "
+      CMAKE_CXX_FLAGS_DEBUG: "-fno-limit-debug-info "
+      CMAKE_C_COMPILER_TARGET: "aarch64-none-linux-android31"
+      CMAKE_EXE_LINKER_FLAGS: "-static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments  "
+      CMAKE_MODULE_PATH: "/workspaces/llm-chat-app-template/llama.cpp/cmake/;/workspaces/llm-chat-app-template/llama.cpp/ggml/cmake/"
+      CMAKE_POSITION_INDEPENDENT_CODE: "TRUE"
+      CMAKE_SYSROOT: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot"
+    buildResult:
+      variable: "HAVE_FP16_VECTOR_ARITHMETIC"
+      cached: true
+      stdout: |
+        Change Dir: '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-WJFWor'
+        
+        Run Build Command(s): /home/codespace/Android/Sdk/cmake/3.31.6/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_da8c3/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_da8c3.dir/build.make CMakeFiles/cmTC_da8c3.dir/build
+        gmake[1]: Entering directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-WJFWor'
+        Building CXX object CMakeFiles/cmTC_da8c3.dir/src.cxx.o
+        /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android31 --sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_FP16_VECTOR_ARITHMETIC  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security    -std=gnu++17 -fPIE -MD -MT CMakeFiles/cmTC_da8c3.dir/src.cxx.o -MF CMakeFiles/cmTC_da8c3.dir/src.cxx.o.d -o CMakeFiles/cmTC_da8c3.dir/src.cxx.o -c /workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-WJFWor/src.cxx
+        /workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-WJFWor/src.cxx:3:24: error: "Feature FP16_VECTOR_ARITHMETIC is not defined"
+            3 |                     #  error "Feature FP16_VECTOR_ARITHMETIC is not defined"
+              |                        ^
+        1 error generated.
+        gmake[1]: *** [CMakeFiles/cmTC_da8c3.dir/build.make:82: CMakeFiles/cmTC_da8c3.dir/src.cxx.o] Error 1
+        gmake[1]: Leaving directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-WJFWor'
+        gmake: *** [Makefile:134: cmTC_da8c3/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CheckCXXSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "ggml/src/ggml-cpu/CMakeLists.txt:269 (check_cxx_source_compiles)"
+      - "ggml/src/CMakeLists.txt:596 (ggml_add_cpu_backend_variant_impl)"
+    checks:
+      - "Performing Test HAVE_SME"
+    directories:
+      source: "/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-EXfSXN"
+      binary: "/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-EXfSXN"
+    cmakeVariables:
+      ANDROID_ABI: "arm64-v8a"
+      ANDROID_ARM_MODE: "thumb"
+      ANDROID_PIE: "TRUE"
+      ANDROID_PLATFORM: "android-31"
+      ANDROID_STL: "c++_static"
+      ANDROID_TOOLCHAIN: "clang"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang-scan-deps"
+      CMAKE_CXX_COMPILER_TARGET: "aarch64-none-linux-android31"
+      CMAKE_CXX_FLAGS: "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  "
+      CMAKE_CXX_FLAGS_DEBUG: "-fno-limit-debug-info "
+      CMAKE_C_COMPILER_TARGET: "aarch64-none-linux-android31"
+      CMAKE_EXE_LINKER_FLAGS: "-static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments  "
+      CMAKE_MODULE_PATH: "/workspaces/llm-chat-app-template/llama.cpp/cmake/;/workspaces/llm-chat-app-template/llama.cpp/ggml/cmake/"
+      CMAKE_POSITION_INDEPENDENT_CODE: "TRUE"
+      CMAKE_SYSROOT: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot"
+    buildResult:
+      variable: "HAVE_SME"
+      cached: true
+      stdout: |
+        Change Dir: '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-EXfSXN'
+        
+        Run Build Command(s): /home/codespace/Android/Sdk/cmake/3.31.6/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_71163/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_71163.dir/build.make CMakeFiles/cmTC_71163.dir/build
+        gmake[1]: Entering directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-EXfSXN'
+        Building CXX object CMakeFiles/cmTC_71163.dir/src.cxx.o
+        /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android31 --sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_SME  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security    -std=gnu++17 -fPIE -MD -MT CMakeFiles/cmTC_71163.dir/src.cxx.o -MF CMakeFiles/cmTC_71163.dir/src.cxx.o.d -o CMakeFiles/cmTC_71163.dir/src.cxx.o -c /workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-EXfSXN/src.cxx
+        /workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-EXfSXN/src.cxx:3:24: error: "Feature SME is not defined"
+            3 |                     #  error "Feature SME is not defined"
+              |                        ^
+        1 error generated.
+        gmake[1]: *** [CMakeFiles/cmTC_71163.dir/build.make:82: CMakeFiles/cmTC_71163.dir/src.cxx.o] Error 1
+        gmake[1]: Leaving directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-EXfSXN'
+        gmake: *** [Makefile:134: cmTC_71163/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CheckLibraryExists.cmake:78 (try_compile)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/FindThreads.cmake:175 (_threads_check_lib)"
+      - "src/CMakeLists.txt:72 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthreads"
+    directories:
+      source: "/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-nV343t"
+      binary: "/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-nV343t"
+    cmakeVariables:
+      ANDROID_ABI: "arm64-v8a"
+      ANDROID_ARM_MODE: "thumb"
+      ANDROID_PIE: "TRUE"
+      ANDROID_PLATFORM: "android-31"
+      ANDROID_STL: "c++_static"
+      ANDROID_TOOLCHAIN: "clang"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang-scan-deps"
+      CMAKE_CXX_COMPILER_TARGET: "aarch64-none-linux-android31"
+      CMAKE_C_COMPILER_TARGET: "aarch64-none-linux-android31"
+      CMAKE_C_FLAGS: "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security "
+      CMAKE_C_FLAGS_DEBUG: "-fno-limit-debug-info "
+      CMAKE_EXE_LINKER_FLAGS: "-static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments  "
+      CMAKE_MODULE_PATH: "/workspaces/llm-chat-app-template/llama.cpp/cmake/"
+      CMAKE_POSITION_INDEPENDENT_CODE: "TRUE"
+      CMAKE_SYSROOT: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREADS_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-nV343t'
+        
+        Run Build Command(s): /home/codespace/Android/Sdk/cmake/3.31.6/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_5e1aa/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_5e1aa.dir/build.make CMakeFiles/cmTC_5e1aa.dir/build
+        gmake[1]: Entering directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-nV343t'
+        Building C object CMakeFiles/cmTC_5e1aa.dir/CheckFunctionExists.c.o
+        /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android31 --sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -DCHECK_FUNCTION_EXISTS=pthread_create -fPIE -MD -MT CMakeFiles/cmTC_5e1aa.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_5e1aa.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_5e1aa.dir/CheckFunctionExists.c.o -c /workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-nV343t/CheckFunctionExists.c
+        Linking C executable cmTC_5e1aa
+        /home/codespace/Android/Sdk/cmake/3.31.6/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5e1aa.dir/link.txt --verbose=1
+        ld.lld: error: unable to find library -lpthreads
+        clang: error: linker command failed with exit code 1 (use -v to see invocation)
+        /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android31 --sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -DCHECK_FUNCTION_EXISTS=pthread_create -static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments    CMakeFiles/cmTC_5e1aa.dir/CheckFunctionExists.c.o -o cmTC_5e1aa  -lpthreads -latomic -lm
+        gmake[1]: *** [CMakeFiles/cmTC_5e1aa.dir/build.make:103: cmTC_5e1aa] Error 1
+        gmake[1]: Leaving directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-nV343t'
+        gmake: *** [Makefile:134: cmTC_5e1aa/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/CheckLibraryExists.cmake:78 (try_compile)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "/home/codespace/Android/Sdk/cmake/3.31.6/share/cmake-3.31/Modules/FindThreads.cmake:176 (_threads_check_lib)"
+      - "src/CMakeLists.txt:72 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthread"
+    directories:
+      source: "/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-B17SY5"
+      binary: "/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-B17SY5"
+    cmakeVariables:
+      ANDROID_ABI: "arm64-v8a"
+      ANDROID_ARM_MODE: "thumb"
+      ANDROID_PIE: "TRUE"
+      ANDROID_PLATFORM: "android-31"
+      ANDROID_STL: "c++_static"
+      ANDROID_TOOLCHAIN: "clang"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang-scan-deps"
+      CMAKE_CXX_COMPILER_TARGET: "aarch64-none-linux-android31"
+      CMAKE_C_COMPILER_TARGET: "aarch64-none-linux-android31"
+      CMAKE_C_FLAGS: "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security "
+      CMAKE_C_FLAGS_DEBUG: "-fno-limit-debug-info "
+      CMAKE_EXE_LINKER_FLAGS: "-static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments  "
+      CMAKE_MODULE_PATH: "/workspaces/llm-chat-app-template/llama.cpp/cmake/"
+      CMAKE_POSITION_INDEPENDENT_CODE: "TRUE"
+      CMAKE_SYSROOT: "/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREAD_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-B17SY5'
+        
+        Run Build Command(s): /home/codespace/Android/Sdk/cmake/3.31.6/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_59df3/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_59df3.dir/build.make CMakeFiles/cmTC_59df3.dir/build
+        gmake[1]: Entering directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-B17SY5'
+        Building C object CMakeFiles/cmTC_59df3.dir/CheckFunctionExists.c.o
+        /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android31 --sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -DCHECK_FUNCTION_EXISTS=pthread_create -fPIE -MD -MT CMakeFiles/cmTC_59df3.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_59df3.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_59df3.dir/CheckFunctionExists.c.o -c /workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-B17SY5/CheckFunctionExists.c
+        Linking C executable cmTC_59df3
+        /home/codespace/Android/Sdk/cmake/3.31.6/bin/cmake -E cmake_link_script CMakeFiles/cmTC_59df3.dir/link.txt --verbose=1
+        ld.lld: error: unable to find library -lpthread
+        clang: error: linker command failed with exit code 1 (use -v to see invocation)
+        /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android31 --sysroot=/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -DCHECK_FUNCTION_EXISTS=pthread_create -static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments    CMakeFiles/cmTC_59df3.dir/CheckFunctionExists.c.o -o cmTC_59df3  -lpthread -latomic -lm
+        gmake[1]: *** [CMakeFiles/cmTC_59df3.dir/build.make:103: cmTC_59df3] Error 1
+        gmake[1]: Leaving directory '/workspaces/llm-chat-app-template/build-android-arm64/CMakeFiles/CMakeScratch/TryCompile-B17SY5'
+        gmake: *** [Makefile:134: cmTC_59df3/fast] Error 2
+        
+      exitCode: 2
+...

@@ -1,0 +1,3 @@
+/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/CMakeFiles/kleidiai-populate.dir
+/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/CMakeFiles/edit_cache.dir
+/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/CMakeFiles/rebuild_cache.dir

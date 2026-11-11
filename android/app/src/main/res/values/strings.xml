@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Nvm Dark AI</string>
+    <string name="title_activity_main">Nvm Dark AI</string>
+    <string name="package_name">com.i27dark.nvmdark</string>
+    <string name="custom_url_scheme">com.i27dark.nvmdark</string>
+</resources>

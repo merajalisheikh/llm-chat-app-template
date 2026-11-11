@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/home/codespace/Android/Sdk/cmake/3.31.6/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/kleidiai-populate-prefix/src/kleidiai-populate-stamp/download-kleidiai-populate.cmake;COMMAND;/home/codespace/Android/Sdk/cmake/3.31.6/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/kleidiai-populate-prefix/src/kleidiai-populate-stamp/verify-kleidiai-populate.cmake;COMMAND;/home/codespace/Android/Sdk/cmake/3.31.6/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/kleidiai-populate-prefix/src/kleidiai-populate-stamp/extract-kleidiai-populate.cmake
+source_dir=/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-src
+work_dir=/workspaces/llm-chat-app-template/build-android-bridge/_deps
+url(s)=https://github.com/ARM-software/kleidiai/releases/download/v1.32.0/kleidiai-v1.32.0-src.tar.gz
+hash=MD5=05f1953428ffe8e8c7f585dc6d508887
+      no_extract=
+

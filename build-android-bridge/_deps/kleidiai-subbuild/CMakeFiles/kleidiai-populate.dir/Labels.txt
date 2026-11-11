@@ -1,0 +1,14 @@
+# Target labels
+ kleidiai-populate
+# Source files and their labels
+/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/CMakeFiles/kleidiai-populate
+/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/CMakeFiles/kleidiai-populate.rule
+/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/CMakeFiles/kleidiai-populate-complete.rule
+/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/kleidiai-populate-prefix/src/kleidiai-populate-stamp/kleidiai-populate-build.rule
+/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/kleidiai-populate-prefix/src/kleidiai-populate-stamp/kleidiai-populate-configure.rule
+/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/kleidiai-populate-prefix/src/kleidiai-populate-stamp/kleidiai-populate-download.rule
+/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/kleidiai-populate-prefix/src/kleidiai-populate-stamp/kleidiai-populate-install.rule
+/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/kleidiai-populate-prefix/src/kleidiai-populate-stamp/kleidiai-populate-mkdir.rule
+/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/kleidiai-populate-prefix/src/kleidiai-populate-stamp/kleidiai-populate-patch.rule
+/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/kleidiai-populate-prefix/src/kleidiai-populate-stamp/kleidiai-populate-test.rule
+/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/kleidiai-populate-prefix/src/kleidiai-populate-stamp/kleidiai-populate-update.rule

@@ -1,0 +1,2 @@
+/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libvendor-hash.a "CMakeFiles/vendor-hash.dir/hash.cpp.o" "CMakeFiles/vendor-hash.dir/xxhash/xxhash.c.o" "CMakeFiles/vendor-hash.dir/sha1/sha1.c.o" "CMakeFiles/vendor-hash.dir/sha256/sha256.c.o"
+/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libvendor-hash.a

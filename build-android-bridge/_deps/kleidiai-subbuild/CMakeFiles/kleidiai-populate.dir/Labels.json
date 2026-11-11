@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/CMakeFiles/kleidiai-populate"
+		},
+		{
+			"file" : "/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/CMakeFiles/kleidiai-populate.rule"
+		},
+		{
+			"file" : "/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/CMakeFiles/kleidiai-populate-complete.rule"
+		},
+		{
+			"file" : "/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/kleidiai-populate-prefix/src/kleidiai-populate-stamp/kleidiai-populate-build.rule"
+		},
+		{
+			"file" : "/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/kleidiai-populate-prefix/src/kleidiai-populate-stamp/kleidiai-populate-configure.rule"
+		},
+		{
+			"file" : "/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/kleidiai-populate-prefix/src/kleidiai-populate-stamp/kleidiai-populate-download.rule"
+		},
+		{
+			"file" : "/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/kleidiai-populate-prefix/src/kleidiai-populate-stamp/kleidiai-populate-install.rule"
+		},
+		{
+			"file" : "/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/kleidiai-populate-prefix/src/kleidiai-populate-stamp/kleidiai-populate-mkdir.rule"
+		},
+		{
+			"file" : "/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/kleidiai-populate-prefix/src/kleidiai-populate-stamp/kleidiai-populate-patch.rule"
+		},
+		{
+			"file" : "/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/kleidiai-populate-prefix/src/kleidiai-populate-stamp/kleidiai-populate-test.rule"
+		},
+		{
+			"file" : "/workspaces/llm-chat-app-template/build-android-bridge/_deps/kleidiai-subbuild/kleidiai-populate-prefix/src/kleidiai-populate-stamp/kleidiai-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"kleidiai-populate"
+		],
+		"name" : "kleidiai-populate"
+	}
+}

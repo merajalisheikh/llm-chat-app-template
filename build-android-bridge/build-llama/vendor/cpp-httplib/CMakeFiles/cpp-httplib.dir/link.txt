@@ -1,0 +1,2 @@
+/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libcpp-httplib.a "CMakeFiles/cpp-httplib.dir/httplib.cpp.o"
+/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libcpp-httplib.a
