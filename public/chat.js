@@ -143,58 +143,10 @@ async function sendMessage() {
 		// Send request to API
 
                 // Android: use on-device Local AI
-                if (window.Capacitor?.isNativePlatform?.()) {
-
-                    const localAI = window.Capacitor.registerPlugin("LocalAI");
-
-                    const greetingReply = getGreetingReply(message);
-
-                    if (greetingReply) {
-                        assistantTextEl.textContent = greetingReply;
-                        chatHistory.push({ role: "assistant", content: greetingReply });
-                        saveCurrentMessages();
-                        return;
-                    }
-
-
-                    if (greetingReply) {
-                        assistantTextEl.textContent = greetingReply;
-                        chatHistory.push({ role: "assistant", content: greetingReply });
-                        saveCurrentMessages();
-                        return;
-                    }
-
-                    if (!window.localAIModelLoaded) {
-                        await localAI.loadModel();
-                        window.localAIModelLoaded = true;
-                    }
-
-                    let responseText = "";
-
-                    const listener = await localAI.addListener("token", data => {
-                        responseText += data.token;
-                        assistantTextEl.textContent = responseText;
-                        chatMessages.scrollTop = chatMessages.scrollHeight;
-                    });
-
-                    try {
-                        await localAI.sendPrompt({ message });
-                    } finally {
-                        await listener.remove();
-                    }
-
-                    if (responseText) {
-                        chatHistory.push({
-                            role: "assistant",
-                            content: responseText
-                        });
-                        saveCurrentMessages();
-                    }
-
-                    return;
-                }
-
-		const response = await fetch("/api/chat", {
+                const response = await fetch(
+                    window.Capacitor?.isNativePlatform?.()
+                        ? "https://llm-chat-app-template.meraljaliseikh786.workers.dev/api/chat"
+                        : "/api/chat", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
