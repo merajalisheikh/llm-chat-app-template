@@ -145,7 +145,7 @@ async function sendMessage() {
                 // Android: use on-device Local AI
                 const response = await fetch(
                     window.Capacitor?.isNativePlatform?.()
-                        ? "https://llm-chat-app-template.meraljaliseikh786.workers.dev/api/chat"
+                        ? "https://llm-chat-app-template.merajaliseikh786.workers.dev/api/chat"
                         : "/api/chat", {
 			method: "POST",
 			headers: {
