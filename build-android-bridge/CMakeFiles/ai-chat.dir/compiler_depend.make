@@ -932,6 +932,43 @@ CMakeFiles/ai-chat.dir/ai_chat.cpp.o: /workspaces/llm-chat-app-template/llama.cp
   /workspaces/llm-chat-app-template/llama.cpp/include/llama.h \
   /workspaces/llm-chat-app-template/llama.cpp/examples/llama.android/lib/src/main/cpp/logging.h
 
+libai-chat.so: /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/aarch64/libatomic.a \
+  /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/aarch64/libunwind.a \
+  /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-aarch64-android.a \
+  /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtbegin_so.o \
+  /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtend_so.o \
+  /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/libandroid.so \
+  /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/libc++.a \
+  /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/libc.so \
+  /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/libdl.so \
+  /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/liblog.so \
+  /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/libm.so \
+  /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++_static.a \
+  /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++abi.a \
+  CMakeFiles/ai-chat.dir/ai_chat.cpp.o \
+  bin/libggml-base.so \
+  bin/libggml-cpu.so \
+  bin/libggml.so \
+  bin/libllama-common.so \
+  bin/libllama.so \
+  build-llama/common/libllama-common-base.a
+
+
+build-llama/common/libllama-common-base.a:
+
+bin/libllama.so:
+
+bin/libggml-base.so:
+
+/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++abi.a:
+
+/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++_static.a:
+
+/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/libm.so:
+
+/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/libdl.so:
+
+/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/aarch64/libatomic.a:
 
 /workspaces/llm-chat-app-template/llama.cpp/include/llama.h:
 
@@ -999,6 +1036,8 @@ CMakeFiles/ai-chat.dir/ai_chat.cpp.o: /workspaces/llm-chat-app-template/llama.cp
 
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/string_view:
 
+bin/libggml.so:
+
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/string.h:
 
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/string:
@@ -1063,6 +1102,8 @@ CMakeFiles/ai-chat.dir/ai_chat.cpp.o: /workspaces/llm-chat-app-template/llama.cp
 
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__utility/unreachable.h:
 
+bin/libggml-cpu.so:
+
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__utility/priority_tag.h:
 
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__utility/piecewise_construct.h:
@@ -1078,6 +1119,8 @@ CMakeFiles/ai-chat.dir/ai_chat.cpp.o: /workspaces/llm-chat-app-template/llama.cp
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__utility/convert_to_integral.h:
 
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__utility/cmp.h:
+
+/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/liblog.so:
 
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__utility/auto_cast.h:
 
@@ -1170,6 +1213,8 @@ CMakeFiles/ai-chat.dir/ai_chat.cpp.o: /workspaces/llm-chat-app-template/llama.cp
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__type_traits/is_nothrow_destructible.h:
 
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__type_traits/is_nothrow_copy_constructible.h:
+
+/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-aarch64-android.a:
 
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/cstddef:
 
@@ -1323,6 +1368,8 @@ CMakeFiles/ai-chat.dir/ai_chat.cpp.o: /workspaces/llm-chat-app-template/llama.cp
 
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__ranges/container_compatible_range.h:
 
+/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtbegin_so.o:
+
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__ranges/concepts.h:
 
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__ranges/access.h:
@@ -1346,6 +1393,8 @@ CMakeFiles/ai-chat.dir/ai_chat.cpp.o: /workspaces/llm-chat-app-template/llama.cp
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__mutex/unique_lock.h:
 
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__mutex/once_flag.h:
+
+/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/aarch64/libunwind.a:
 
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/cstring:
 
@@ -1410,6 +1459,8 @@ CMakeFiles/ai-chat.dir/ai_chat.cpp.o: /workspaces/llm-chat-app-template/llama.cp
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__math/roots.h:
 
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__math/remainder.h:
+
+bin/libllama-common.so:
 
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__math/modulo.h:
 
@@ -2135,6 +2186,8 @@ CMakeFiles/ai-chat.dir/ai_chat.cpp.o: /workspaces/llm-chat-app-template/llama.cp
 
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__algorithm/search.h:
 
+/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtend_so.o:
+
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__algorithm/ranges_equal.h:
 
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__algorithm/in_in_result.h:
@@ -2235,9 +2288,13 @@ CMakeFiles/ai-chat.dir/ai_chat.cpp.o: /workspaces/llm-chat-app-template/llama.cp
 
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__algorithm/rotate_copy.h:
 
+/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/libandroid.so:
+
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__type_traits/is_reference_wrapper.h:
 
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__algorithm/sample.h:
+
+CMakeFiles/ai-chat.dir/ai_chat.cpp.o:
 
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/posix_types.h:
 
@@ -2440,6 +2497,8 @@ CMakeFiles/ai-chat.dir/ai_chat.cpp.o: /workspaces/llm-chat-app-template/llama.cp
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/ios:
 
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__compare/compare_strong_order_fallback.h:
+
+/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/libc++.a:
 
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__type_traits/is_union.h:
 
@@ -2686,6 +2745,8 @@ CMakeFiles/ai-chat.dir/ai_chat.cpp.o: /workspaces/llm-chat-app-template/llama.cp
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__iterator/common_iterator.h:
 
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__functional/ranges_operations.h:
+
+/home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/libc.so:
 
 /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/ndk-version.h:
 

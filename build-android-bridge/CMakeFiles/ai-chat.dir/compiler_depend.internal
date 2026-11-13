@@ -933,3 +933,25 @@ CMakeFiles/ai-chat.dir/ai_chat.cpp.o
  /workspaces/llm-chat-app-template/llama.cpp/include/llama.h
  /workspaces/llm-chat-app-template/llama.cpp/examples/llama.android/lib/src/main/cpp/logging.h
 
+libai-chat.so
+ /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/aarch64/libatomic.a
+ /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/aarch64/libunwind.a
+ /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-aarch64-android.a
+ /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtbegin_so.o
+ /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtend_so.o
+ /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/libandroid.so
+ /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/libc++.a
+ /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/libc.so
+ /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/libdl.so
+ /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/liblog.so
+ /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/libm.so
+ /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++_static.a
+ /home/codespace/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++abi.a
+ /workspaces/llm-chat-app-template/build-android-bridge/CMakeFiles/ai-chat.dir/ai_chat.cpp.o
+ /workspaces/llm-chat-app-template/build-android-bridge/bin/libggml-base.so
+ /workspaces/llm-chat-app-template/build-android-bridge/bin/libggml-cpu.so
+ /workspaces/llm-chat-app-template/build-android-bridge/bin/libggml.so
+ /workspaces/llm-chat-app-template/build-android-bridge/bin/libllama-common.so
+ /workspaces/llm-chat-app-template/build-android-bridge/bin/libllama.so
+ /workspaces/llm-chat-app-template/build-android-bridge/build-llama/common/libllama-common-base.a
+

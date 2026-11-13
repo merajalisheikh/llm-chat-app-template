@@ -77,6 +77,33 @@ sendButton.onclick = sendMessage;
 /**
  * Sends a message to the chat API and processes the response
  */
+
+function getGreetingReply(message) {
+    const text = message.toLowerCase().trim()
+        .replace(/[!?.,।]+$/g, "").replace(/\s+/g, " ");
+
+    const replies = {
+        "hi": "Hello! How can I help you today?",
+        "hello": "Hey! How are you?",
+        "hey": "Hey there! What's up?",
+        "hii": "Hello! How can I help you?",
+        "hiii": "Hello! How can I help you?",
+        "good morning": "Good morning! Have a wonderful day!",
+        "good afternoon": "Good afternoon! How can I help?",
+        "good evening": "Good evening! How can I help you?",
+        "assalamualaikum": "Wa Alaikum Assalam! How are you?",
+        "salam": "Wa Alaikum Assalam!",
+        "how are you": "I'm doing great! Thanks for asking. How can I help you?",
+        "how r u": "I'm doing great! How are you?",
+        "kase ho": "Main bilkul theek hoon! Aap kaise ho?",
+        "kaise ho": "Main bilkul theek hoon! Aap kaise ho?",
+        "kya haal hai": "Sab badhiya! Aap batao, kaise ho?",
+        "namaste": "Namaste! Aapki kya madad kar sakta hoon?"
+    };
+
+    return replies[text] || null;
+}
+
 async function sendMessage() {
 	const message = userInput.value.trim();
 
@@ -114,6 +141,59 @@ async function sendMessage() {
 		chatMessages.scrollTop = chatMessages.scrollHeight;
 
 		// Send request to API
+
+                // Android: use on-device Local AI
+                if (window.Capacitor?.isNativePlatform?.()) {
+
+                    const localAI = window.Capacitor.registerPlugin("LocalAI");
+
+                    const greetingReply = getGreetingReply(message);
+
+                    if (greetingReply) {
+                        assistantTextEl.textContent = greetingReply;
+                        chatHistory.push({ role: "assistant", content: greetingReply });
+                        saveCurrentMessages();
+                        return;
+                    }
+
+
+                    if (greetingReply) {
+                        assistantTextEl.textContent = greetingReply;
+                        chatHistory.push({ role: "assistant", content: greetingReply });
+                        saveCurrentMessages();
+                        return;
+                    }
+
+                    if (!window.localAIModelLoaded) {
+                        await localAI.loadModel();
+                        window.localAIModelLoaded = true;
+                    }
+
+                    let responseText = "";
+
+                    const listener = await localAI.addListener("token", data => {
+                        responseText += data.token;
+                        assistantTextEl.textContent = responseText;
+                        chatMessages.scrollTop = chatMessages.scrollHeight;
+                    });
+
+                    try {
+                        await localAI.sendPrompt({ message });
+                    } finally {
+                        await listener.remove();
+                    }
+
+                    if (responseText) {
+                        chatHistory.push({
+                            role: "assistant",
+                            content: responseText
+                        });
+                        saveCurrentMessages();
+                    }
+
+                    return;
+                }
+
 		const response = await fetch("/api/chat", {
 			method: "POST",
 			headers: {
@@ -220,7 +300,7 @@ async function sendMessage() {
 		console.error("Error:", error);
 		addMessageToChat(
 			"assistant",
-			"Sorry, there was an error processing your request.",
+			`Error: ${error?.message || error}`,
 		);
 	} finally {
 		// Hide typing indicator
